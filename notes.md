@@ -39,3 +39,11 @@ Comment
   beach id (integer)
   belongs_to :user
   belongs_to :beach
+
+x Create models and migrations
+x Setup routes and controller for beaches
+x add beach adn comment serializers
+x add seed data
+
+* add user model via devise
+* setup routes and controller for comments

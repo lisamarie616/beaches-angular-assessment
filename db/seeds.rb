@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Beach.create(name: "Zuma Beach", description: "The best beach in LA County, wide open clean sand, mild waves, plentiful parking, life-guards, food stands and bathrooms.  Swim in the summer, watch wildlife in the winter, or swim too if you're hardy. Eat hotdogs and build sand castles.  Have a great day at the beach at Zuma Beach! Sand Surf and Fun!", 
+  address: "30000 Pacific Coast Hwy", city: "Malibu", state: "CA", zip: 90265, 
+  restrooms: true, dogs_allowed: false, firepits: false, food_onsite: true, shopping_onsite: false, 
+  pier: false)
+
+Beach.create(name: "La Jolla Shores", description: "A wide, mile-long beach with soft sand, clean water and gentle waves, La Jolla Shores is an ideal spot for families, sunbathers and beginner surfers.", 
+  address: "8302 Camino Del Oro", city: "La Jolla", state: "CA", zip: 92037, dogs_allowed: false, 
+  firepits: false, shopping_onsite: false)
