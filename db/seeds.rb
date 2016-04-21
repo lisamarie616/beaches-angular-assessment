@@ -13,3 +13,10 @@ Beach.create(name: "Zuma Beach", description: "The best beach in LA County, wide
 Beach.create(name: "La Jolla Shores", description: "A wide, mile-long beach with soft sand, clean water and gentle waves, La Jolla Shores is an ideal spot for families, sunbathers and beginner surfers.", 
   address: "8302 Camino Del Oro", city: "La Jolla", state: "CA", zip: 92037, dogs_allowed: false, 
   firepits: false, shopping_onsite: false)
+
+Comment.create(note: "Love this beach!" , user_id: 1, beach_id: 1)
+Comment.create(note: "Free parking on PCH" , user_id: 1, beach_id: 1)
+Comment.create(note: "Great place to watch the sunset" , user_id: 1, beach_id: 1)
+Comment.create(note: "Not overly crowded" , user_id: 1, beach_id: 1)
+Comment.create(note: "Absolutely beautiful!" , user_id: 1, beach_id: 2)
+Comment.create(note: "Large parking lot, free during off season" , user_id: 1, beach_id: 2)
