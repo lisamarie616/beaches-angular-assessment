@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root 'application#angular'
+  
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :beaches
