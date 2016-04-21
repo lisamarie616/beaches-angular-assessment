@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  note: MyString
+  score: 1
+  user_id: 1
+  beach_id: 1
+
+two:
+  note: MyString
+  score: 1
+  user_id: 1
+  beach_id: 1

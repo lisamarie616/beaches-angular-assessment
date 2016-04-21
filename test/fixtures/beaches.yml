@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+  parking_hourly_cost: 1.5
+  parking_daily_cost: 1.5
+  bike_rental_hourly_cost: 1.5
+  bike_rental_daily_cost: 1.5
+  chair_rental_hourly_cost: 1.5
+  chair_rental_daily_cost: 1.5
+  umbrella_rental_hourly_cost: 1.5
+  umbrella_rental_daily_cost: 1.5
+  restrooms: false
+  dogs_allowed: false
+  firepits: false
+
+two:
+  name: MyString
+  description: MyText
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+  parking_hourly_cost: 1.5
+  parking_daily_cost: 1.5
+  bike_rental_hourly_cost: 1.5
+  bike_rental_daily_cost: 1.5
+  chair_rental_hourly_cost: 1.5
+  chair_rental_daily_cost: 1.5
+  umbrella_rental_hourly_cost: 1.5
+  umbrella_rental_daily_cost: 1.5
+  restrooms: false
+  dogs_allowed: false
+  firepits: false
