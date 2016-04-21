@@ -45,6 +45,7 @@ x Setup routes and controller for beaches
 x add beach adn comment serializers
 x add seed data
 x finish beaches controller
+x add user model via devise
 
-* add user model via devise
+* add navigation bar with links for sign in, sign up, sign out
 * setup routes and controller for comments
