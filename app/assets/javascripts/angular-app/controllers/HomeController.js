@@ -1,0 +1,3 @@
+beachesApp.controller('HomeController', function(){
+
+});
