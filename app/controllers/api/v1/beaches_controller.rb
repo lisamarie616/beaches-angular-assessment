@@ -14,7 +14,9 @@ module Api
       def create
         beach = Beach.new(beach_params)
         if beach.save
-          render json: beach
+          render json: beach, status: :created
+        else
+          render json: beach.errors, status: :unprocessable_entity
         end
       end
 
@@ -22,6 +24,8 @@ module Api
         beach = set_beach
         if beach.update(beach_params)
           render json: beach
+        else
+          render json: beach.errors, status: :unprocessable_entity
         end
       end
 

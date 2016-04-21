@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :beaches
+      resources :beaches, :except => [:new, :edit] do
+        resources :comments, :except => [:new, :edit]
+      end
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

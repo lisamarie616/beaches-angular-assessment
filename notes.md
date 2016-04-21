@@ -46,6 +46,11 @@ x add beach adn comment serializers
 x add seed data
 x finish beaches controller
 x add user model via devise
+x add comments controller, add devise and bootstrap to angular app, edits to beaches controller
 
 * add navigation bar with links for sign in, sign up, sign out
-* setup routes and controller for comments
+* move omniauth from backend to frontend??
+* move flash messages from backend to frontend
+
+
+
