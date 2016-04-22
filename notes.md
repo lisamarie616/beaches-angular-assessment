@@ -49,7 +49,7 @@ x add user model via devise
 x add comments controller, add devise and bootstrap to angular app, edits to beaches controller
 
 * add navigation bar with links for sign in, sign up, sign out
-* move omniauth from backend to frontend??
+* add omniauth?
 * move flash messages from backend to frontend
 
 

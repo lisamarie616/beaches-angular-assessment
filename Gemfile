@@ -16,7 +16,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'active_model_serializers'
 gem 'devise'
-gem 'omniauth-facebook'
 gem 'figaro'
 
 gem 'bower-rails'
