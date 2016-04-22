@@ -47,10 +47,11 @@ x add seed data
 x finish beaches controller
 x add user model via devise
 x add comments controller, add devise and bootstrap to angular app, edits to beaches controller
+x add navigation bar with links for sign in, sign up, sign out
+x add flash messages
 
-* add navigation bar with links for sign in, sign up, sign out
 * add omniauth?
-* move flash messages from backend to frontend
+* need better implementation of flash messages (ex: hitting login multiple times keeps adding error messages)
 
 
 

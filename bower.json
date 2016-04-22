@@ -7,7 +7,8 @@
       "angular-resource" : "v1.5.3",
       "angular-bootstrap" : "latest",
       "bootstrap" : "v3.3.6",
-      "angular-devise" : "latest"
+      "angular-devise" : "latest",
+      "message-center" : "latest"
     }
   },
   "vendor": {

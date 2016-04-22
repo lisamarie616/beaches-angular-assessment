@@ -10,9 +10,11 @@ beachesApp.config(function($stateProvider, $urlRouterProvider){
       templateUrl: 'auth/login.html',
       controller: 'AuthController',
       onEnter: function($state, Auth) {
-        Auth.currentUser().then(function (){
-          $state.go('home');
-        });
+        if (Auth._currentUser) {
+          Auth.currentUser().then(function (){
+            $state.go('home');
+          });
+        }
       }
     })
     .state('home.register', {
@@ -20,9 +22,11 @@ beachesApp.config(function($stateProvider, $urlRouterProvider){
       templateUrl: 'auth/register.html',
       controller: 'AuthController',
       onEnter: function($state, Auth) {
-        Auth.currentUser().then(function (){
-          $state.go('home');
-        });
+        if (Auth._currentUser) {
+          Auth.currentUser().then(function (){
+            $state.go('home');
+          });
+        }
       }
     })
 
