@@ -34,3 +34,29 @@ ul.navbar-nav li a:focus,
     overflow-y: scroll;
   }
 }
+
+.shape {
+  text-align:center;
+  font-family: 'Lobster Two', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  background-color: #27C2CA;
+  height:60px;
+  color:white;
+  margin:20px auto;
+  position:relative;
+}
+.shape:before {
+  content:"";
+  width:0px;
+  height:0px;
+  border-top:60px solid #27C2CA;
+  border-left:60px solid transparent;
+  position:absolute;
+  right:100%;
+  top:0px;
+}
+
+.score {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+}

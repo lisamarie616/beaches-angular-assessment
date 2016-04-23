@@ -51,9 +51,13 @@ x add navigation bar with links for sign in, sign up, sign out
 x add flash messages
 x add index route, controller, and template
 x add show route, controller, and template
+x add comments to show page
 
-* create comments directive, add to show page in ng-repeat
 * add ng-click to show comments for each beach (create a directive for comments and insert that into the beaches.html template)
+* add validation to limit comment note attribute to 175 characters
+* need an add comment button on beach show page, on click show the form
+* implement upvote and downvote functionality for comments on beach show page and beach index page and for beaches on index page
+* do i need to restructure the API so it only returns beaches and not the associated comments?
 * add omniauth?
 * need better implementation of flash messages (ex: hitting login multiple times keeps adding error messages)
 * add background image
