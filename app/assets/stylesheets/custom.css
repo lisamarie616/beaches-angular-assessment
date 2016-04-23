@@ -26,3 +26,11 @@ ul.navbar-nav li a:focus,
 .navbar-custom .navbar-brand {
     color:#fff;
 }
+
+@media (min-width: 767px) {
+  .fixed-panel {
+    min-height: 250px;
+    max-height: 250px;
+    overflow-y: scroll;
+  }
+}

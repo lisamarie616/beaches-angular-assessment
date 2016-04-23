@@ -31,8 +31,13 @@ beachesApp.config(function($stateProvider, $urlRouterProvider){
     })
     .state('home.beaches', {
       url: 'beaches',
-      templateUrl: 'beaches/beaches.html',
+      templateUrl: 'beaches/index.html',
       controller: 'BeachesController as index'
+    })
+    .state('home.beach', {
+      url: 'beach/:id',
+      templateUrl: 'beaches/show.html',
+      controller: 'BeachController as show'
     })
 
   $urlRouterProvider.otherwise('/');

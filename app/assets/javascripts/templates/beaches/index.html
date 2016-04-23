@@ -2,9 +2,9 @@
   <div class="col-sm-4">
     <div class="panel panel-info">
       <div class="panel-heading">
-        <h4><a ui-sref="beach({id: beach.id})">{{ beach.name }}</a></h4>
+        <h4><a ui-sref="home.beach({id: beach.id})">{{ beach.name }}</a></h4>
       </div>
-      <div class="panel-body">
+      <div class="panel-body fixed-panel">
         <p><strong>Address:</strong> {{ beach.address}}, {{ beach.city }} {{ beach.state}} {{ beach.zip }}</p>
         <p><em>{{ beach.description}}</em></p>
           <a>

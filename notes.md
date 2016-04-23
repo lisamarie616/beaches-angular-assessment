@@ -42,7 +42,7 @@ Comment
 
 x Create models and migrations
 x Setup routes and controller for beaches
-x add beach adn comment serializers
+x add beach and comment serializers
 x add seed data
 x finish beaches controller
 x add user model via devise
@@ -50,11 +50,12 @@ x add comments controller, add devise and bootstrap to angular app, edits to bea
 x add navigation bar with links for sign in, sign up, sign out
 x add flash messages
 x add index route, controller, and template
+x add show route, controller, and template
 
-* add show route, controller, and template
+* create comments directive, add to show page in ng-repeat
 * add ng-click to show comments for each beach (create a directive for comments and insert that into the beaches.html template)
 * add omniauth?
 * need better implementation of flash messages (ex: hitting login multiple times keeps adding error messages)
-
+* add background image
 
 
