@@ -1,4 +1,4 @@
-<nav ng-controller="NavController" class="navbar navbar-dark bg-info navbar-fixed-top">
+<nav ng-controller="NavController" class="navbar navbar-custom navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" ng-click="isCollapsed = !isCollapsed">
@@ -11,9 +11,10 @@
     </div>
     <div class="hidden-xs">
       <ul class="nav nav-pills navbar-nav">
-        <a class="navbar-brand">Beaches</a>
+        <a class="navbar-brand" href="#">Beaches</a>
         <li ng-hide="signedIn()" ><a href="#/login">Log In</a></li>
         <li ng-hide="signedIn()" ui-sref-active="active"><a href="#/register">Register</a></li>
+        <li ng-show="signedIn()" ui-sref-active="active"><a href="#/beaches">All Beaches</a></li>
         <li ng-show="signedIn()" ui-sref-active="active"><a href="#/beaches/new">Add a Beach</a></li>
         <li ng-show="signedIn()"><a href="#/">Logged in as {{ user.username }}</a></li>
         <li ng-show="signedIn()" ui-sref-active="active"><a ng-click="logout()">Log Out</a></li>
@@ -23,6 +24,7 @@
       <ul class="nav navbar-nav">
         <li ng-hide="signedIn()" ><a href="#/login" ng-click="isCollapsed = !isCollapsed">Log In</a></li>
         <li ng-hide="signedIn()" ui-sref-active="active"><a href="#/register" ng-click="isCollapsed = !isCollapsed">Register</a></li>
+        <li ng-show="signedIn()" ui-sref-active="active"><a href="#/beaches">All Beaches</a></li>
         <li ng-show="signedIn()" ui-sref-active="active"><a href="#/beaches/new" ng-click="isCollapsed = !isCollapsed">Add a Beach</a></li>
         <li ng-show="signedIn()" ui-sref-active="active"><a ng-click="isCollapsed = !isCollapsed; logout()">Log Out</a></li>
       </ul>

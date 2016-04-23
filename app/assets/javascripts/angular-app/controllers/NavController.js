@@ -7,12 +7,9 @@ beachesApp.controller('NavController', function($scope, $state, Auth, messageCen
     Auth.logout();
   }
 
-  if (Auth._currentUser){
-    Auth.currentUser()
-    .then(function (user){
-      $scope.user = user;
-    });
-  }
+  Auth.currentUser().then(function (user){
+    $scope.user = user;
+  });
 
   $scope.$on('devise:new-registration', function (e, user){
     $scope.user = user;
@@ -24,7 +21,8 @@ beachesApp.controller('NavController', function($scope, $state, Auth, messageCen
 
   $scope.$on('devise:logout', function (e, user){
     $scope.user = {}
-    messageCenterService.add('success', 'Logged out successfully.', {status: messageCenterService.status.unseen})
+    messageCenterService.add('success', 'Logged out successfully.', {status: messageCenterService.status.next})
+    $state.go('home')
   }); 
 
 });

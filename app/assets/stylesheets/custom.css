@@ -2,12 +2,27 @@ body {
   padding-top: 60px
 }
 
-.navbar-dark .navbar-toggle .icon-bar {
+.navbar-custom .navbar-toggle .icon-bar {
   background-color: #000;
 }
 
 ul.navbar-nav li a:hover,
-ul.navbar-nav li a:focus {
-  color: #337ab7;
-  background-color: #FFF; 
+ul.navbar-nav li a:focus,
+.navbar-nav a:hover,
+.navbar-nav a:focus {
+  background-color: #1adfdf; 
+}
+
+.navbar-custom {
+    background-color:#3cabe7;
+    color:#fff;
+    border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:#fff;
+}
+
+.navbar-custom .navbar-brand {
+    color:#fff;
 }

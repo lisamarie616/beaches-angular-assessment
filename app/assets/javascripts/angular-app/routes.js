@@ -29,6 +29,11 @@ beachesApp.config(function($stateProvider, $urlRouterProvider){
         }
       }
     })
+    .state('home.beaches', {
+      url: 'beaches',
+      templateUrl: 'beaches/beaches.html',
+      controller: 'BeachesController as index'
+    })
 
   $urlRouterProvider.otherwise('/');
 });
