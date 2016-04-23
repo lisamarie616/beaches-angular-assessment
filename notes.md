@@ -52,12 +52,16 @@ x add flash messages
 x add index route, controller, and template
 x add show route, controller, and template
 x add comments to show page
+x add comments to beach index page
 
-* add ng-click to show comments for each beach (create a directive for comments and insert that into the beaches.html template)
-* add validation to limit comment note attribute to 175 characters
-* need an add comment button on beach show page, on click show the form
+* create action for beaches
+* update action for beaches
+* edit action for beaches
+* destroy action for beaches
+* add field on beach index page to add comment (at top of comments)
+* add validation to limit comment note attribute to 140 characters
+* need an add comment button on beach show page (at top of comments), on click show field to add comment
 * implement upvote and downvote functionality for comments on beach show page and beach index page and for beaches on index page
-* do i need to restructure the API so it only returns beaches and not the associated comments?
 * add omniauth?
 * need better implementation of flash messages (ex: hitting login multiple times keeps adding error messages)
 * add background image

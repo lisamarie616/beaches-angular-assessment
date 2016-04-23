@@ -1,31 +1,33 @@
 <h2 class="page-header">{{ show.beach.name }} <small>{{ show.beach.address}}, {{ show.beach.city }} {{ show.beach.state}} {{ show.beach.zip }}</small></h2>
 <p><em>{{ show.beach.description}}</em></p>
 
-<div class="col-sm-4">
-  <p ng-show="show.beach.parking_hourly_cost"><strong>Parking Hourly Rate:</strong> ${{ show.beach.parking_hourly_cost }}</p>
-  <p ng-show="show.beach.parking_daily_cost"><strong>Parking Daily Rate:</strong> ${{ show.beach.parking_daily_cost }}</p>
-  <p ng-show="show.beach.bike_rental_hourly_cost"><strong>Bike Rental Hourly Rate:</strong> ${{ show.beach.bike_rental_hourly_cost }}</p>
-  <p ng-show="show.beach.bike_rental_daily_cost"><strong>Bike Rental Daily Rate:</strong> ${{ show.beach.bike_rental_daily_cost }}</p>
-  <p ng-show="show.beach.chair_rental_hourly_cost"><strong>Chair Rental Hourly Rate:</strong> ${{ show.beach.chair_rental_hourly_cost }}</p>
-  <p ng-show="show.beach.chair_rental_daily_cost"><strong>Chair Rental Daily Rate:</strong> ${{ show.beach.bike_rental_daily_cost }}</p>
-  <p ng-show="show.beach.umbrella_rental_hourly_cost"><strong>Umbrella Rental Hourly Rate:</strong> ${{ show.beach.umbrella_rental_hourly_cost }}</p>
-  <p ng-show="show.beach.umbrella_rental_daily_cost"><strong>Umbrella Rental Daily Rate:</strong> ${{ show.beach.bike_rental_daily_cost }}</p>
-  <p><strong>Restrooms:</strong> {{ show.beach.restrooms ? "Yes" : "No" }}</p>
-  <p><strong>Showers:</strong> {{ show.beach.showers ? "Yes" : "No" }}</p>
-  <p><strong>Water Fountains:</strong> {{ show.beach.water_fountains ? "Yes" : "No" }}</p>
-  <p><strong>Food Onsite:</strong> {{ show.beach.food_onsite ? "Yes" : "No" }}</p>
-  <p><strong>Bar Onsite:</strong> {{ show.beach.bar_onsite ? "Yes" : "No" }}</p>
-  <p><strong>Shopping Onsite:</strong> {{ show.beach.shopping_onsite ? "Yes" : "No" }}</p>
-  <p><strong>Pier:</strong> {{ show.beach.pier ? "Yes" : "No" }}</p>
-  <p><strong>Firepits:</strong> {{ show.beach.firepits ? "Yes" : "No" }}</p>
-  <p><strong>Dogs Allowed:</strong> {{ show.beach.dogs_allowed ? "Yes" : "No" }}</p>  
-</div>
+<div class="row">
+  <div class="col-sm-4">
+    <p ng-show="show.beach.parking_hourly_cost"><strong>Parking Hourly Rate:</strong> ${{ show.beach.parking_hourly_cost }}</p>
+    <p ng-show="show.beach.parking_daily_cost"><strong>Parking Daily Rate:</strong> ${{ show.beach.parking_daily_cost }}</p>
+    <p ng-show="show.beach.bike_rental_hourly_cost"><strong>Bike Rental Hourly Rate:</strong> ${{ show.beach.bike_rental_hourly_cost }}</p>
+    <p ng-show="show.beach.bike_rental_daily_cost"><strong>Bike Rental Daily Rate:</strong> ${{ show.beach.bike_rental_daily_cost }}</p>
+    <p ng-show="show.beach.chair_rental_hourly_cost"><strong>Chair Rental Hourly Rate:</strong> ${{ show.beach.chair_rental_hourly_cost }}</p>
+    <p ng-show="show.beach.chair_rental_daily_cost"><strong>Chair Rental Daily Rate:</strong> ${{ show.beach.bike_rental_daily_cost }}</p>
+    <p ng-show="show.beach.umbrella_rental_hourly_cost"><strong>Umbrella Rental Hourly Rate:</strong> ${{ show.beach.umbrella_rental_hourly_cost }}</p>
+    <p ng-show="show.beach.umbrella_rental_daily_cost"><strong>Umbrella Rental Daily Rate:</strong> ${{ show.beach.bike_rental_daily_cost }}</p>
+    <p><strong>Restrooms:</strong> {{ show.beach.restrooms ? "Yes" : "No" }}</p>
+    <p><strong>Showers:</strong> {{ show.beach.showers ? "Yes" : "No" }}</p>
+    <p><strong>Water Fountains:</strong> {{ show.beach.water_fountains ? "Yes" : "No" }}</p>
+    <p><strong>Food Onsite:</strong> {{ show.beach.food_onsite ? "Yes" : "No" }}</p>
+    <p><strong>Bar Onsite:</strong> {{ show.beach.bar_onsite ? "Yes" : "No" }}</p>
+    <p><strong>Shopping Onsite:</strong> {{ show.beach.shopping_onsite ? "Yes" : "No" }}</p>
+    <p><strong>Pier:</strong> {{ show.beach.pier ? "Yes" : "No" }}</p>
+    <p><strong>Firepits:</strong> {{ show.beach.firepits ? "Yes" : "No" }}</p>
+    <p><strong>Dogs Allowed:</strong> {{ show.beach.dogs_allowed ? "Yes" : "No" }}</p>  
+  </div>
 
-<div class="col-sm-8">
-  <div ng-repeat="comment in show.beach.comments" class="shape">
-    <span class="score">+</span>
-    <span class="score">{{ comment.score }}</span>
-    <span class="score">&ndash;&nbsp;&nbsp;</span>
-    {{ comment.note }}
+  <div class="col-sm-8">
+    <div ng-repeat="comment in show.beach.comments" class="shape">
+      <span class="score">+</span>
+      <span class="score">{{ comment.score }}</span>
+      <span class="score">&ndash;&nbsp;&nbsp;</span>
+      {{ comment.note }}
+    </div>
   </div>
 </div>

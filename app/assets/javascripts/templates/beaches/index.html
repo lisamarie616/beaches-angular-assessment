@@ -5,11 +5,21 @@
         <h4><a ui-sref="home.beach({id: beach.id})">{{ beach.name }}</a></h4>
       </div>
       <div class="panel-body fixed-panel">
-        <p><strong>Address:</strong> {{ beach.address}}, {{ beach.city }} {{ beach.state}} {{ beach.zip }}</p>
-        <p><em>{{ beach.description}}</em></p>
-          <a>
-            {{ beach.score }} points | {{ beach.comments.length }} comments
-          </a>
+        <p><strong>Address:</strong> {{ beach.address }}, {{ beach.city }} {{ beach.state }} {{ beach.zip }}</p>
+        <p><em>{{ beach.description | characters:275 :true }}</em></p>
+        <a ng-click="isCollapsed = !isCollapsed">{{ beach.score }} points | {{ beach.comments.length }} comments</a>
+        <br><br>
+
+        <div uib-collapse="!isCollapsed">
+          <p ng-repeat="comment in beach.comments | limitTo:10">
+            <span>+</span>
+            <span>{{ comment.score }}</span>
+            <span>&ndash;&nbsp;&nbsp;</span>
+            {{ comment.note }}
+          </p>
+          <a ui-sref="home.beach({id: beach.id})" class="btn btn-info btn-sm">More</a>
+        </div>
+
       </div>
     </div>
   </div>
