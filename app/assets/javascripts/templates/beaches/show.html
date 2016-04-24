@@ -21,6 +21,7 @@
     <p><strong>Firepits:</strong> {{ ctrl.beach.firepits ? "Yes" : "No" }}</p>
     <p><strong>Dogs Allowed:</strong> {{ ctrl.beach.dogs_allowed ? "Yes" : "No" }}</p>  
     <a ui-sref="home.editBeach({id: ctrl.beach.id})" class="btn btn-info btn-sm">Edit</a>
+    <a ng-click="ctrl.deleteBeach(ctrl.beach)" class="btn btn-info btn-sm">Delete</a>
   </div>
 
   <div class="col-sm-8">

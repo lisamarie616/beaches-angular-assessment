@@ -56,10 +56,11 @@ x add comments to beach index page
 x add new and create route, controller, and template for beach
 x add edit and update route, controller, and template for beach
 x remove serializers and use respond_with in api controller instead
+x add delete button to beach show page and delete function to BeachController
 
-* destroy action for beaches
 * associate beach with user who created it
 * only allow user who created the beach to destroy it
+* add edit and delete buttons to beach index page?
 * associate comment with user
 * only allow user who created the comment to edit or destroy it
 * add field on beach index page to add comment (at top of comments)
