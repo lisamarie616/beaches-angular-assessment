@@ -25,5 +25,5 @@ beachesApp.controller('AuthController', function($scope, $state, Auth, messageCe
       result.push(key.charAt(0).toUpperCase() + key.slice(1) + " " + errorObj.errors[key])
     }
     return result.join(". ") + ".";
-  };
-});
+  };  
+})

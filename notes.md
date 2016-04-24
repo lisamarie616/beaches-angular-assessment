@@ -54,11 +54,16 @@ x add show route, controller, and template
 x add comments to show page
 x add comments to beach index page
 x add new and create route, controller, and template for beach
+x add edit and update route, controller, and template for beach
+x remove serializers and use respond_with in api controller instead
 
-* update action for beaches
-* edit action for beaches
 * destroy action for beaches
+* associate beach with user who created it
+* only allow user who created the beach to destroy it
+* associate comment with user
+* only allow user who created the comment to edit or destroy it
 * add field on beach index page to add comment (at top of comments)
+* add functionality to edit and delete comments
 * add validation to limit comment note attribute to 140 characters
 * need an add comment button on beach show page (at top of comments), on click show field to add comment
 * implement upvote and downvote functionality for comments on beach show page and beach index page and for beaches on index page

@@ -1,3 +1,3 @@
 beachesApp.controller('HomeController', function(){
 
-});
+})

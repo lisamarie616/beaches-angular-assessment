@@ -1,35 +1,36 @@
 module Api
   module V1
     class CommentsController < ApplicationController
+
       def index
         beach = Beach.find(params[:beach_id])
         comments = beach.comments
-        render json: comments
+        respond_with beach, comments
       end
 
       def show
         comment = set_comment
-        render json: comment
+        respond_with comment
       end
 
       def create
         beach = Beach.find(params[:beach_id])
         comment = beach.comments.build(beach_params)
         if comment.save
-          render json: comment
+          respond_with beach, comment
         end
       end
 
       def update
         comment = set_comment
         if comment.update(comment_params)
-          render json: comment
+          respond_with comment
         end
       end
 
       def destroy
         comment = set_comment
-        comment.destroy
+        respond_with comment.destroy
       end
 
       private

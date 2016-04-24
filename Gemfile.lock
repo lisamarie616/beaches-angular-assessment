@@ -20,8 +20,6 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    active_model_serializers (0.9.4)
-      activemodel (>= 3.2)
     activejob (4.2.5.1)
       activesupport (= 4.2.5.1)
       globalid (>= 0.3.0)
@@ -152,7 +150,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers
   angular-rails-templates
   bower-rails
   byebug
@@ -160,6 +157,7 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   rails (= 4.2.5.1)
+  responders
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

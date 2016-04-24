@@ -1,105 +1,104 @@
-<h2 class="page-header">Add a Beach</h2>
 <div class="form-group">
   <label for="name" class="col-sm-1 control-label">Name</label>
   <div class="col-sm-11">
-    <input type="text" ng-model="new.beach.name" class="form-control" id="name" placeholder="Beach Name" autofocus="true"/>
+    <input type="text" ng-model="ctrl.beach.name" class="form-control" id="name" placeholder="Beach Name" autofocus="true"/>
   </div>
 </div>
 <div class="form-group">
   <label for="description" class="col-sm-1 control-label">Description</label>
   <div class="col-sm-11">
-    <textarea ng-model="new.beach.description" id="description" cols="30" rows="4" class="form-control" placeholder="Description"></textarea>
+    <textarea ng-model="ctrl.beach.description" id="description" cols="30" rows="4" class="form-control" placeholder="Description"></textarea>
   </div>
 </div>
 <div class="form-group">
   <label for="address" class="col-sm-1 control-label">Address</label>
   <div class="col-sm-11">
-    <input type="text" ng-model="new.beach.address" class="form-control" id="address" placeholder="Street Address"/>
+    <input type="text" ng-model="ctrl.beach.address" class="form-control" id="address" placeholder="Street Address"/>
   </div>
 </div>
 <div class="form-group">
   <label for="city" class="col-sm-1 control-label">City</label>
   <div class="col-sm-4">
-    <input type="text" ng-model="new.beach.city" class="form-control" id="city" placeholder="City"/>
+    <input type="text" ng-model="ctrl.beach.city" class="form-control" id="city" placeholder="City"/>
   </div>
   <label for="state" class="col-sm-1 control-label">State</label>
   <div class="col-sm-2">
-    <input type="text" ng-model="new.beach.state" class="form-control" id="state" placeholder="State"/>
+    <input type="text" ng-model="ctrl.beach.state" class="form-control" id="state" placeholder="State"/>
   </div>
   <label for="zip" class="col-sm-1 control-label">Zip Code</label>
   <div class="col-sm-3">
-    <input type="text" ng-model="new.beach.zip" class="form-control" id="zip" placeholder="Zip Code"/>
+    <input type="text" ng-model="ctrl.beach.zip" class="form-control" id="zip" placeholder="Zip Code"/>
   </div>
 </div>
 <div class="form-group">
     <h3>Amenities</h3>
     <label class="checkbox-inline">
-      <input type="checkbox" id="restrooms" ng-model="new.beach.restrooms"> Restrooms
+      <input type="checkbox" id="restrooms" ng-model="ctrl.beach.restrooms"> Restrooms
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" id="showers" ng-model="new.beach.showers"> Showers
+      <input type="checkbox" id="showers" ng-model="ctrl.beach.showers"> Showers
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" id="fountains" ng-model="new.beach.water_fountains"> Water Fountains
+      <input type="checkbox" id="fountains" ng-model="ctrl.beach.water_fountains"> Water Fountains
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" id="food" ng-model="new.beach.food_onsite"> Food Onsite
+      <input type="checkbox" id="food" ng-model="ctrl.beach.food_onsite"> Food Onsite
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" id="bar" ng-model="new.beach.bar_onsite"> Bar Onsite
+      <input type="checkbox" id="bar" ng-model="ctrl.beach.bar_onsite"> Bar Onsite
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" id="shopping" ng-model="new.beach.shopping_onsite"> Shopping Onsite
+      <input type="checkbox" id="shopping" ng-model="ctrl.beach.shopping_onsite"> Shopping Onsite
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" id="pier" ng-model="new.beach.pier"> Pier
+      <input type="checkbox" id="pier" ng-model="ctrl.beach.pier"> Pier
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" id="firepits" ng-model="new.beach.firepits"> Firepits
+      <input type="checkbox" id="firepits" ng-model="ctrl.beach.firepits"> Firepits
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" id="dogs" ng-model="new.beach.dogs_allowed"> Dogs Allowed
+      <input type="checkbox" id="dogs" ng-model="ctrl.beach.dogs_allowed"> Dogs Allowed
     </label>
 </div>
 <div class="form-group">
   <h3>Rates</h3>
   <label for="parking_hourly" class="col-sm-2 control-label">Parking Hourly</label>
   <div class="col-sm-2">
-    <input type="number" ng-model="new.beach.parking_rental_hourly_cost" class="form-control" id="parking_hourly"/>
+    <input type="number" ng-model="ctrl.beach.parking_hourly_cost" class="form-control" id="parking_hourly"/>
   </div>
   <label for="parking_daily" class="col-sm-2 control-label">Parking Daily</label>
   <div class="col-sm-2">
-    <input type="number" ng-model="new.beach.parking_rental_daily_cost" class="form-control" id="parking_daily"/>
+    <input type="number" ng-model="ctrl.beach.parking_daily_cost" class="form-control" id="parking_daily"/>
   </div>
 </div>
 <div class="form-group">
   <label for="bike_hourly" class="col-sm-2 control-label">Bike Rental Hourly</label>
   <div class="col-sm-2">
-    <input type="number" ng-model="new.beach.bike_rental_hourly_cost" class="form-control" id="bike_hourly"/>
+    <input type="number" ng-model="ctrl.beach.bike_rental_hourly_cost" class="form-control" id="bike_hourly"/>
   </div>
   <label for="bike_daily" class="col-sm-2 control-label">Bike Rental Daily</label>
   <div class="col-sm-2">
-    <input type="number" ng-model="new.beach.bike_rental_daily_cost" class="form-control" id="bike_daily"/>
+    <input type="number" ng-model="ctrl.beach.bike_rental_daily_cost" class="form-control" id="bike_daily"/>
   </div>
 </div>
 <div class="form-group">
   <label for="chair_hourly" class="col-sm-2 control-label">Chair Rental Hourly</label>
   <div class="col-sm-2">
-    <input type="number" ng-model="new.beach.chair_rental_hourly_cost" class="form-control" id="chair_hourly"/>
+    <input type="number" ng-model="ctrl.beach.chair_rental_hourly_cost" class="form-control" id="chair_hourly"/>
   </div>
   <label for="chair_daily" class="col-sm-2 control-label">Chair Rental Daily</label>
   <div class="col-sm-2">
-    <input type="number" ng-model="new.beach.chair_rental_daily_cost" class="form-control" id="chair_daily"/>
+    <input type="number" ng-model="ctrl.beach.chair_rental_daily_cost" class="form-control" id="chair_daily"/>
   </div>
 </div>
 <div class="form-group">
   <label for="umbrella_hourly" class="col-sm-2 control-label">Umbrella Rental Hourly</label>
   <div class="col-sm-2">
-    <input type="number" ng-model="new.beach.umbrella_rental_hourly_cost" class="form-control" id="umbrella_hourly"/>
+    <input type="number" ng-model="ctrl.beach.umbrella_rental_hourly_cost" class="form-control" id="umbrella_hourly"/>
   </div>
   <label for="umbrella_daily" class="col-sm-2 control-label">Umbrella Rental Daily</label>
   <div class="col-sm-2">
-    <input type="number" ng-model="new.beach.umbrella_rental_daily_cost" class="form-control" id="umbrella_daily"/>
+    <input type="number" ng-model="ctrl.beach.umbrella_rental_daily_cost" class="form-control" id="umbrella_daily"/>
   </div>
 </div>
 <div class="form-group">

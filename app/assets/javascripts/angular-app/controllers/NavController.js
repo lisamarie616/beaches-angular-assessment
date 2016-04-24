@@ -23,6 +23,5 @@ beachesApp.controller('NavController', function($scope, $state, Auth, messageCen
     $scope.user = {}
     messageCenterService.add('success', 'Logged out successfully.', {status: messageCenterService.status.next})
     $state.go('home')
-  }); 
-
-});
+  });  
+})

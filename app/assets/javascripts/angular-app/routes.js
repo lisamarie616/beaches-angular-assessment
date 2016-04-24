@@ -3,7 +3,7 @@ beachesApp.config(function($stateProvider, $urlRouterProvider){
     .state('home', {
       url: '/',
       templateUrl: 'home.html',
-      controller: 'HomeController as home'
+      controller: 'HomeController as ctrl'
     })
     .state('home.login', {
       url: 'login',
@@ -12,7 +12,7 @@ beachesApp.config(function($stateProvider, $urlRouterProvider){
       onEnter: function($state, Auth) {
         if (Auth._currentUser) {
           Auth.currentUser().then(function (){
-            $state.go('home');
+            $state.go('home.beaches');
           });
         }
       }
@@ -24,7 +24,7 @@ beachesApp.config(function($stateProvider, $urlRouterProvider){
       onEnter: function($state, Auth) {
         if (Auth._currentUser) {
           Auth.currentUser().then(function (){
-            $state.go('home');
+            $state.go('home.beaches');
           });
         }
       }
@@ -32,18 +32,23 @@ beachesApp.config(function($stateProvider, $urlRouterProvider){
     .state('home.beaches', {
       url: 'beaches',
       templateUrl: 'beaches/index.html',
-      controller: 'BeachesController as index'
-    })
-    .state('home.beach', {
-      url: 'beach/:id',
-      templateUrl: 'beaches/show.html',
-      controller: 'BeachController as show'
+      controller: 'BeachesController as ctrl'
     })
     .state('home.newBeach', {
       url: 'beaches/new',
       templateUrl: 'beaches/new.html',
-      controller: 'NewBeachController as new'
+      controller: 'NewBeachController as ctrl'
     })
+    .state('home.beach', {
+      url: 'beaches/:id',
+      templateUrl: 'beaches/show.html',
+      controller: 'BeachController as ctrl'
+    })
+    .state('home.editBeach', {
+      url: 'beaches/:id/edit',
+      templateUrl: 'beaches/edit.html',
+      controller: 'EditBeachController as ctrl'
+    });
 
   $urlRouterProvider.otherwise('/');
 });

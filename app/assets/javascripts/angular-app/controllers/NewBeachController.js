@@ -6,6 +6,5 @@ beachesApp.controller('NewBeachController', function(Beach, $stateParams, $state
     ctrl.beach.$save(function(){
       $state.go('home.beaches');
     });
-  };
-  
-});
+  };    
+})
