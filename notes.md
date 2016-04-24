@@ -53,8 +53,8 @@ x add index route, controller, and template
 x add show route, controller, and template
 x add comments to show page
 x add comments to beach index page
+x add new and create route, controller, and template for beach
 
-* create action for beaches
 * update action for beaches
 * edit action for beaches
 * destroy action for beaches

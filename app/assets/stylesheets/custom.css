@@ -59,3 +59,11 @@ ul.navbar-nav li a:focus,
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 20px;
 }
+
+.beach-votes {
+  float: right;
+}
+
+textarea {
+    resize: none;
+}

@@ -1,4 +1,4 @@
-<h2 class="page-header">{{ show.beach.name }} <small>{{ show.beach.address}}, {{ show.beach.city }} {{ show.beach.state}} {{ show.beach.zip }}</small></h2>
+<h2 class="page-header">{{ show.beach.name }} <small>{{ show.beach.address}}<span ng-show="show.beach.address">,</span> {{ show.beach.city }}<span ng-show="show.beach.city">,</span> {{ show.beach.state}} {{ show.beach.zip }}</small></h2>
 <p><em>{{ show.beach.description}}</em></p>
 
 <div class="row">
