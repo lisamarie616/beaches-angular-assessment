@@ -57,8 +57,8 @@ x add new and create route, controller, and template for beach
 x add edit and update route, controller, and template for beach
 x remove serializers and use respond_with in api controller instead
 x add delete button to beach show page and delete function to BeachController
+x edit addBeach method in NewBeachController to associate current user with created beach
 
-* associate beach with user who created it
 * only allow user who created the beach to destroy it
 * add edit and delete buttons to beach index page?
 * associate comment with user

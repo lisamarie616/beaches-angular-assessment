@@ -40,7 +40,7 @@ module Api
         :bike_rental_daily_cost, :chair_rental_hourly_cost, :chair_rental_daily_cost, 
         :umbrella_rental_hourly_cost, :umbrella_rental_daily_cost, :restrooms, 
         :dogs_allowed, :firepits, :food_onsite, :bar_onsite, :shopping_onsite, 
-        :pier, :showers, :water_fountains, :score)
+        :pier, :showers, :water_fountains, :score, :user_id)
       end
 
       def set_beach

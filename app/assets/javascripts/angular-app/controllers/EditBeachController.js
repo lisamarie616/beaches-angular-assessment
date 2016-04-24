@@ -1,4 +1,4 @@
-beachesApp.controller('EditBeachController', function(Beach, $state, $stateParams){
+beachesApp.controller('EditBeachController', function($state, $stateParams, Beach){
   var ctrl = this;
 
   ctrl.beach = Beach.get({ id: $stateParams.id });
