@@ -35,11 +35,11 @@
     </div>
   </form>
 
-    <div ng-repeat="comment in ctrl.beach.comments" class="shape">
-      <span class="score">+</span>
-      <span class="score">{{ comment.score }}</span>
-      <span class="score">&ndash;&nbsp;&nbsp;</span>
-      {{ comment.note }}
+    <div ng-repeat="comment in ctrl.comments" class="shape">
+      <span>+</span>
+      <span>{{ comment.score }}</span>
+      <span>&ndash;&nbsp;&nbsp;</span>
+      {{ comment.user.username }}: {{ comment.note }}
     </div>
   </div>
 </div>

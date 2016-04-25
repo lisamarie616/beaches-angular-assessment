@@ -1,4 +1,4 @@
-beachesApp.controller('BeachController', function($state, $stateParams, Auth, messageCenterService, Beach, Comment){
+beachesApp.controller('BeachController', function($state, $stateParams, Auth, messageCenterService, Beach, Comments){
   var ctrl = this;
 
   Auth.currentUser()
@@ -29,5 +29,7 @@ beachesApp.controller('BeachController', function($state, $stateParams, Auth, me
       $state.go($state.current, {}, {reload: true});
     });
   }
+
+  ctrl.comments = Comments.query({ beach_id: $stateParams.id })
 
 })

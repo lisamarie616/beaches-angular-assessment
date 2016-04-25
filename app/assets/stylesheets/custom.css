@@ -34,8 +34,7 @@ ul.navbar-nav li a:focus,
 }
 
 .shape {
-  text-align:center;
-  font-family: 'Lobster Two', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align:left;
   font-size: 20px;
   background-color: #27C2CA;
   height:60px;
@@ -53,11 +52,6 @@ ul.navbar-nav li a:focus,
   position:absolute;
   right:100%;
   top:0px;
-}
-
-.score {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 20px;
 }
 
 .beach-votes {

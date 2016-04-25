@@ -60,7 +60,9 @@ x add delete button to beach show page and delete function to BeachController
 x edit addBeach method in NewBeachController to associate current user with created beach
 x restrict destroy action to user who created beach
 x add comment field on beach show page, comment associates with current user
+x add commentor usernames on beach show page
 
+* show username next to comments on beach index page
 * only allow user who created the comment to edit or destroy it
 * add functionality to edit and delete comments
 * add messages throughout
@@ -74,5 +76,5 @@ x add comment field on beach show page, comment associates with current user
 * need better implementation of flash messages (ex: hitting login multiple times keeps adding error messages)
 * add background image
 * add field on beach index page to add comment (at top of comments)
-
+* update controllers and config/routes.rb to only include needed routes
 
