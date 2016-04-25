@@ -5,7 +5,7 @@ module Api
       def index
         beach = Beach.find(params[:beach_id])
         comments = beach.comments
-        respond_with beach, comments
+        respond_with comments
       end
 
       def show
@@ -15,9 +15,11 @@ module Api
 
       def create
         beach = Beach.find(params[:beach_id])
-        comment = beach.comments.build(beach_params)
+        comment = beach.comments.build(comment_params)
         if comment.save
-          respond_with beach, comment
+          respond_to do |format|
+            format.json { render :json => comment}
+          end
         end
       end
 

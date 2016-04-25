@@ -1,4 +1,4 @@
-beachesApp.controller('BeachController', function($state, $stateParams, Beach, Auth, messageCenterService){
+beachesApp.controller('BeachController', function($state, $stateParams, Auth, messageCenterService, Beach, Comment){
   var ctrl = this;
 
   Auth.currentUser()
@@ -16,8 +16,18 @@ beachesApp.controller('BeachController', function($state, $stateParams, Beach, A
       });  
     } else {
       messageCenterService.add('danger', 'You are not authorized to perform that action.', {status: messageCenterService.status.next})
-      $state.go('home.beaches');
+      $state.go('home.beaches');  
     }
-    
-  };
+  }
+
+  ctrl.comment = new Comment();
+
+  ctrl.addComment = function(user, beach){
+    ctrl.comment.user_id = user.id;
+    ctrl.comment.beach_id = beach.id;
+    ctrl.comment.$save(function(){
+      $state.go($state.current, {}, {reload: true});
+    });
+  }
+
 })

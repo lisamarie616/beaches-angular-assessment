@@ -1,4 +1,11 @@
-beachesApp.controller('BeachesController', function(Beach){
+beachesApp.controller('BeachesController', function(Auth, Beach){
   var ctrl = this;
-  ctrl.beaches = Beach.query();  
+
+  Auth.currentUser()
+    .then(function(user){
+      ctrl.user = user;
+    });
+
+  ctrl.beaches = Beach.query();
+
 })
