@@ -58,8 +58,9 @@ x add edit and update route, controller, and template for beach
 x remove serializers and use respond_with in api controller instead
 x add delete button to beach show page and delete function to BeachController
 x edit addBeach method in NewBeachController to associate current user with created beach
+x restrict destroy action to user who created beach
 
-* only allow user who created the beach to destroy it
+* add messages throughout
 * add edit and delete buttons to beach index page?
 * associate comment with user
 * only allow user who created the comment to edit or destroy it
@@ -68,6 +69,7 @@ x edit addBeach method in NewBeachController to associate current user with crea
 * add validation to limit comment note attribute to 140 characters
 * need an add comment button on beach show page (at top of comments), on click show field to add comment
 * implement upvote and downvote functionality for comments on beach show page and beach index page and for beaches on index page
+* add filters
 * add omniauth?
 * need better implementation of flash messages (ex: hitting login multiple times keeps adding error messages)
 * add background image
