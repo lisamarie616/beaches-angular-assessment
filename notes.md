@@ -61,8 +61,8 @@ x edit addBeach method in NewBeachController to associate current user with crea
 x restrict destroy action to user who created beach
 x add comment field on beach show page, comment associates with current user
 x add commentor usernames on beach show page
+x add commentor usernames on beach index page using directive, refactor beach show page to use same directive
 
-* show username next to comments on beach index page
 * only allow user who created the comment to edit or destroy it
 * add functionality to edit and delete comments
 * add messages throughout

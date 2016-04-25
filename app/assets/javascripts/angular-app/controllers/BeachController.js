@@ -30,6 +30,4 @@ beachesApp.controller('BeachController', function($state, $stateParams, Auth, me
     });
   }
 
-  ctrl.comments = Comments.query({ beach_id: $stateParams.id })
-
 })

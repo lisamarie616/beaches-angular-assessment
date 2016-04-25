@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :beaches, :except => [:new, :edit] do
         resources :comments, :except => [:new, :edit]
       end
+      resources :users, :only => [:show]
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
