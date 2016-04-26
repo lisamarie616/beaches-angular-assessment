@@ -5,9 +5,9 @@
         <h4>
           <a ui-sref="home.beach({id: beach.id})">{{ beach.name }}</a>
           <span class="beach-votes">
-            <span>+</span>
+            <span ng-click="ctrl.upvote(beach)">+</span>
             <span>{{ beach.score }}</span>
-            <span>&ndash;&nbsp;&nbsp;</span>
+            <span ng-click="ctrl.downvote(beach)">&ndash;&nbsp;&nbsp;</span>
           </span>
         </h4>
       </div>

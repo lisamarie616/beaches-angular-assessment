@@ -9,6 +9,13 @@ Rails.application.routes.draw do
         resources :comments, :except => [:new, :edit]
       end
       resources :users, :only => [:show]
+
+      post 'beaches/:id/upvote' => 'beach_upvotes#create', as: :beach_upvotes
+      delete 'beaches/:id/upvote' => 'beach_upvotes#destroy', as: :beach_upvote
+
+      post 'beaches/:id/downvote' => 'beach_downvotes#create', as: :beach_downvotes
+      delete 'beaches/:id/downvote' => 'beach_downvotes#destroy', as: :beach_downvote
+      
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

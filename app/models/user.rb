@@ -5,5 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :beaches
+  has_many :beach_upvotes, dependent: :destroy
+  has_many :upvoted_beaches, through: :beach_upvotes, source: :beach
+  has_many :beach_downvotes, dependent: :destroy
+  has_many :downvoted_beaches, through: :beach_downvotes, source: :beach
 
 end
