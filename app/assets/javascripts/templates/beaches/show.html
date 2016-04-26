@@ -35,7 +35,7 @@
     </div>
   </form>
 
-    <div ng-repeat="comment in ctrl.beach.comments" class="shape">
+    <div ng-repeat="comment in ctrl.beach.comments | orderBy: '-score'" class="shape">
       <comment comment="comment" beach="ctrl.beach"></comment>
     </div>
   </div>

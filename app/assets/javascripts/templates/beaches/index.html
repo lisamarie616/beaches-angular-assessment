@@ -1,4 +1,4 @@
-<div ng-repeat="beach in ctrl.beaches">
+<div ng-repeat="beach in ctrl.beaches | orderBy: '-score'">
   <div class="col-sm-4">
     <div class="panel panel-info">
       <div class="panel-heading">
@@ -18,7 +18,7 @@
         <br><br>
 
         <div uib-collapse="!isCollapsed">
-          <p ng-repeat="comment in beach.comments | limitTo:10">
+          <p ng-repeat="comment in beach.comments | orderBy: '-score' | limitTo:10">
             <comment comment="comment" beach="beach"></comment>
           </p>
           <a ui-sref="home.beach({id: beach.id})" class="btn btn-info btn-sm">More</a>
