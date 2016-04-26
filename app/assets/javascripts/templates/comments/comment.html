@@ -1,5 +1,5 @@
-<button class="btn btn-primary btn-xs">+</button>
+<button ng-click="upvote(beach, comment)" class="btn btn-primary btn-xs">+</button>
 <span>{{ comment.score }}</span>
-<button class="btn btn-primary btn-xs">&ndash;</button>
+<button ng-click="downvote(beach, comment)" class="btn btn-primary btn-xs">&ndash;</button>
 {{ commentor.username }}: {{ comment.note }}
 <a ng-click="deleteComment(comment.beach_id, comment.id, comment.user_id)" class="btn btn-primary btn-xs" ng-show="comment.user_id === current_user.id">Delete</a>

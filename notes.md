@@ -64,10 +64,12 @@ x add commentor usernames on beach show page
 x add commentor usernames on beach index page using directive, refactor beach show page to use same directive
 x add functionality delete comments and only allow user who created the comment to destroy it
 x implement upvote and downvote for beaches on beach index page
+x implement upvote and downvote for comments
 
-* implement upvote and downvote functionality for comments on beach show page and beach index page and for beaches on index page
-* factor out upvote/downvote functions from BeachesController into a service?
+* order beaches and comments by votes
+* make voting buttons round
 * add filters
+* factor out upvote/downvote functions from BeachesController into a service? and from comments directive controller
 * add validation to limit comment note attribute to 140 characters
 * add validations to require certain fields when creating a beach; also need uniqueness validations for username, beach name
 * only allow authenticated users to access app

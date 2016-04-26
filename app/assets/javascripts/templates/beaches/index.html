@@ -19,7 +19,7 @@
 
         <div uib-collapse="!isCollapsed">
           <p ng-repeat="comment in beach.comments | limitTo:10">
-            <comment comment="comment"></comment>
+            <comment comment="comment" beach="beach"></comment>
           </p>
           <a ui-sref="home.beach({id: beach.id})" class="btn btn-info btn-sm">More</a>
         </div>

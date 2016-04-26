@@ -15,6 +15,12 @@ Rails.application.routes.draw do
 
       post 'beaches/:id/downvote' => 'beach_downvotes#create', as: :beach_downvotes
       delete 'beaches/:id/downvote' => 'beach_downvotes#destroy', as: :beach_downvote
+
+      post 'beaches/:beach_id/comments/:id/upvote' => 'comment_upvotes#create', as: :comment_upvotes
+      delete 'beaches/:beach_id/comments/:id/upvote' => 'comment_upvotes#destroy', as: :comment_upvote
+
+      post 'beaches/:beach_id/comments/:id/downvote' => 'comment_downvotes#create', as: :comment_downvotes
+      delete 'beaches/:beach_id/comments/:id/downvote' => 'comment_downvotes#destroy', as: :comment_downvote
       
     end
   end
