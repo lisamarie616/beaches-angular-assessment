@@ -1,4 +1,4 @@
-beachesApp.controller('BeachController', function($state, $stateParams, Auth, messageCenterService, Beach, Comments){
+beachesApp.controller('BeachController', function($state, $stateParams, Auth, messageCenterService, Beach, Comment){
   var ctrl = this;
 
   Auth.currentUser()

@@ -62,19 +62,21 @@ x restrict destroy action to user who created beach
 x add comment field on beach show page, comment associates with current user
 x add commentor usernames on beach show page
 x add commentor usernames on beach index page using directive, refactor beach show page to use same directive
+x add functionality delete comments and only allow user who created the comment to destroy it
 
-* only allow user who created the comment to edit or destroy it
-* add functionality to edit and delete comments
-* add messages throughout
-* add edit and delete buttons to beach index page?
-* add validation to limit comment note attribute to 140 characters
-* refactor Auth currentUser method (as a service?)
-* need an add comment button on beach show page (at top of comments), on click show field to add comment
 * implement upvote and downvote functionality for comments on beach show page and beach index page and for beaches on index page
 * add filters
-* add omniauth?
-* need better implementation of flash messages (ex: hitting login multiple times keeps adding error messages)
-* add background image
-* add field on beach index page to add comment (at top of comments)
-* update controllers and config/routes.rb to only include needed routes
+* add messages throughout (any time a user takes an action a message should be displayed)
+* add validation to limit comment note attribute to 140 characters
+* add validations to require certain fields when creating a beach; also need uniqueness validations for username, beach name
+* only allow authenticated users to access app
+* add something to home page
 
+* refactor Auth currentUser method (as a service?)
+* update controllers and config/routes.rb to only include needed routes
+* need better implementation of flash messages (ex: hitting login multiple times keeps adding error messages)
+* add field on beach index page to add comment (at top of comments)
+* add functionality to edit comments and only allow user who posted the comment to edit it
+* add edit and delete buttons to beach index page?
+* add background image
+* add omniauth?

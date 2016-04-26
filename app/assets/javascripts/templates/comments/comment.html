@@ -1,4 +1,5 @@
 <span>+</span>
 <span>{{ comment.score }}</span>
 <span>&ndash;&nbsp;&nbsp;</span>
-{{ user.username }}: {{ comment.note }}
+{{ commentor.username }}: {{ comment.note }}
+<a ng-click="deleteComment(comment.beach_id, comment.id, comment.user_id)" class="btn btn-primary btn-xs" ng-show="comment.user_id === current_user.id">Delete</a>
