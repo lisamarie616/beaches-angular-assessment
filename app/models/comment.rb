@@ -7,6 +7,8 @@ class Comment < ActiveRecord::Base
   has_many :comment_downvotes, dependent: :destroy
   has_many :downvoted_users, through: :comment_downvotes, source: :user
 
+  validates :note, length: { maximum: 140 }
+
   def as_json(options = {})
     super(options.merge(include: [:user]))
   end

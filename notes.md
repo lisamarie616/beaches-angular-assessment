@@ -71,10 +71,10 @@ x add filters for amenities
 x add basic validations on front-end for beaches and comments
 * add validation to limit comment note attribute to 140 characters
 * add validations to require certain fields when creating a beach (name, city, state)
+* add activerecord model validations
 
 * need better implementation of flash messages, add messages throughout (any time a user takes an action a message should be displayed)
 * only allow authenticated users to access app
-* need uniqueness validations for username, beach name
 * add something to home page
 * update controllers and config/routes.rb to only include needed routes
 * update styles to use a bootsnipp
