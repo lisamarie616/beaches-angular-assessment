@@ -1,4 +1,26 @@
-<div ng-repeat="beach in ctrl.beaches | orderBy: '-score'">
+<div class="form-group">
+  <div class="row">
+    <h4 class="col-sm-1">SEARCH</h4>
+    <div class="col-sm-4">
+      <input type="text" ng-model="search.name" class="form-control" id="name" placeholder="By Name">
+    </div>
+
+    <div class="col-sm-4">
+      <input type="text" ng-model="search.city" class="form-control" id="name" placeholder="By City">
+    </div>
+
+    <div class="col-sm-2">
+      <input type="text" ng-model="search.state" class="form-control" id="name" placeholder="By State">
+    </div>
+  <button ng-click="searchCollapse = !searchCollapse" class="btn btn-primary">More</button>
+  </div>
+</div>
+
+<div uib-collapse="!searchCollapse">
+  more filters
+</div>
+
+<div ng-repeat="beach in ctrl.beaches | orderBy: '-score' | filter:search" >
   <div class="col-sm-4">
     <div class="panel panel-info">
       <div class="panel-heading">

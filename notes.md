@@ -66,8 +66,9 @@ x add functionality delete comments and only allow user who created the comment 
 x implement upvote and downvote for beaches on beach index page
 x implement upvote and downvote for comments
 x order beaches and comments by votes
+x add basic filters
 
-* add filters
+* add additional filters
 * factor out upvote/downvote functions from BeachesController into a service? and from comments directive controller
 * add validation to limit comment note attribute to 140 characters
 * add validations to require certain fields when creating a beach; also need uniqueness validations for username, beach name
