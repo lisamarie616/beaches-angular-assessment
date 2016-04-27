@@ -1,9 +1,7 @@
-beachesApp.controller('NavController', function($scope, $state, Auth, messageCenterService){
+beachesApp.controller('NavController', function($scope, $state, Auth){
   $scope.signedIn = Auth.isAuthenticated;
 
   $scope.logout = function(){
-    messageCenterService.markShown();
-    messageCenterService.removeShown();
     Auth.logout();
   }
 
@@ -21,7 +19,7 @@ beachesApp.controller('NavController', function($scope, $state, Auth, messageCen
 
   $scope.$on('devise:logout', function (e, user){
     $scope.user = {}
-    messageCenterService.add('success', 'Logged out successfully.', {status: messageCenterService.status.next})
+    //success message here
     $state.go('home')
   });  
 })

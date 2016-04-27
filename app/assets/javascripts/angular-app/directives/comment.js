@@ -6,7 +6,7 @@ beachesApp.directive('comment', function(){
       comment: "=",
       beach: "="
     },
-    controller: function($scope, $state, $http, Auth, messageCenterService, User){
+    controller: function($scope, $state, $http, Auth, User){
       Auth.currentUser()
         .then(function(user){
           $scope.current_user = user;
@@ -21,7 +21,7 @@ beachesApp.directive('comment', function(){
               $state.go($state.current, {}, {reload: true});
             })
         } else {
-          messageCenterService.add('danger', 'You are not authorized to perform that action.', {status: messageCenterService.status.unseen})
+          //error message here
           $state.go($state.current, {}, {reload: true});
         }    
       }
@@ -30,15 +30,15 @@ beachesApp.directive('comment', function(){
         return $http.delete('/api/v1/beaches/' + beach.id + '/comments/' + comment.id + '/downvote')
           .then(function(response){
             comment.score += 1;
-            // insert success message here
+            //success message here
           }, function(response){
             return $http.post('/api/v1/beaches/' + beach.id  + '/comments/' + comment.id + '/upvote')
             .then(function(response){
               comment.score +=1;
-              //insert success message here
+              //success message here
             }, function(response){
               console.log("error")
-              // insert error message here
+              //error message here
             });
           });
       }
@@ -47,15 +47,15 @@ beachesApp.directive('comment', function(){
           return $http.delete('/api/v1/beaches/' + beach.id + '/comments/' + comment.id + '/upvote')
             .then(function(response){
               comment.score -= 1;
-              // insert success message here
+              //success message here
             }, function(response){
               return $http.post('/api/v1/beaches/' + beach.id + '/comments/' + comment.id + '/downvote')
               .then(function(response){
                 comment.score -=1;
-                //insert success message here
+                //success message here
               }, function(response){
                 console.log("error")
-                // insert error message here
+                //error message here
               });
             });
         }
