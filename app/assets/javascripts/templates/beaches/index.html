@@ -17,10 +17,38 @@
 </div>
 
 <div uib-collapse="!searchCollapse">
-  more filters
+  <div class="form-group">
+    <label class="checkbox-inline">
+      <input type="checkbox" ng-model="ctrl.checkboxModel.restrooms">Restrooms
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" ng-model="ctrl.checkboxModel.showers">Showers
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" ng-model="ctrl.checkboxModel.water_fountains">Water Fountains
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" ng-model="ctrl.checkboxModel.food_onsite">Food Onsite
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" ng-model="ctrl.checkboxModel.bar_onsite">Bar Onsite
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" ng-model="ctrl.checkboxModel.shopping_onsite">Shopping Onsite
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" ng-model="ctrl.checkboxModel.pier">Pier
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" ng-model="ctrl.checkboxModel.firepits">Firepits
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" ng-model="ctrl.checkboxModel.dogs_allowed">Dogs Allowed
+    </label>
+  </div>
 </div>
 
-<div ng-repeat="beach in ctrl.beaches | orderBy: '-score' | filter:search" >
+<div ng-repeat="beach in ctrl.beaches | orderBy: '-score' | filter:search | amenitiesFilter:ctrl.checkboxModel" >
   <div class="col-sm-4">
     <div class="panel panel-info">
       <div class="panel-heading">
