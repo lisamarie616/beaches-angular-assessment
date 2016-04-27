@@ -8,7 +8,8 @@
       "angular-bootstrap" : "latest",
       "bootstrap" : "v3.3.6",
       "angular-devise" : "latest",
-      "angular-truncate-2" : "latest"
+      "angular-truncate-2" : "latest",
+      "angular-messages" : "latest"
     }
   },
   "vendor": {

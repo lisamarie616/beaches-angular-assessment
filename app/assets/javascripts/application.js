@@ -5,4 +5,5 @@
 //= require angular-resource
 //= require angular-bootstrap/ui-bootstrap
 //= require angular-truncate-2
+//= require angular-messages
 //= require_tree .

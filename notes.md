@@ -68,13 +68,16 @@ x implement upvote and downvote for comments
 x order beaches and comments by votes
 x add basic filters
 x add filters for amenities
+x add basic validations on front-end for beaches and comments
+* add validation to limit comment note attribute to 140 characters
+* add validations to require certain fields when creating a beach (name, city, state)
 
 * need better implementation of flash messages, add messages throughout (any time a user takes an action a message should be displayed)
 * only allow authenticated users to access app
-* add validation to limit comment note attribute to 140 characters
-* add validations to require certain fields when creating a beach (name, city, state); also need uniqueness validations for username, beach name
+* need uniqueness validations for username, beach name
 * add something to home page
 * update controllers and config/routes.rb to only include needed routes
+* update styles to use a bootsnipp
 
 * refactor Auth currentUser method (as a service?)
 * factor out upvote/downvote functions from BeachesController into a service? and from comments directive controller

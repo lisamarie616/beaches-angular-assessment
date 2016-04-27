@@ -1,35 +1,49 @@
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': beachForm.name.$touched && beachForm.name.$invalid }">
   <label for="name" class="col-sm-1 control-label">Name</label>
   <div class="col-sm-11">
-    <input type="text" ng-model="ctrl.beach.name" class="form-control" id="name" placeholder="Beach Name" autofocus="true"/>
+    <input type="text" ng-model="ctrl.beach.name" class="form-control" id="name" name="name" placeholder="Beach Name" autofocus="true" required>
+  </div>
+  <div class="help-block" ng-messages="beachForm.name.$error" ng-show="beachForm.name.$touched">
+    <div ng-messages-include="messages.html"></div>
   </div>
 </div>
+
 <div class="form-group">
   <label for="description" class="col-sm-1 control-label">Description</label>
   <div class="col-sm-11">
     <textarea ng-model="ctrl.beach.description" id="description" cols="30" rows="4" class="form-control" placeholder="Description"></textarea>
   </div>
 </div>
+
 <div class="form-group">
   <label for="address" class="col-sm-1 control-label">Address</label>
   <div class="col-sm-11">
-    <input type="text" ng-model="ctrl.beach.address" class="form-control" id="address" placeholder="Street Address"/>
+    <input type="text" ng-model="ctrl.beach.address" class="form-control" id="address" placeholder="Street Address">
   </div>
 </div>
+
 <div class="form-group">
   <label for="city" class="col-sm-1 control-label">City</label>
-  <div class="col-sm-4">
-    <input type="text" ng-model="ctrl.beach.city" class="form-control" id="city" placeholder="City"/>
+  <div class="col-sm-4"  ng-class="{ 'has-error': beachForm.city.$touched && beachForm.city.$invalid }">
+    <input type="text" ng-model="ctrl.beach.city" class="form-control" id="city" name="city" placeholder="City" required>
+  </div>
+  <div class="help-block" ng-messages="beachForm.city.$error" ng-show="beachForm.city.$touched">
+    <div ng-messages-include="messages.html"></div>
   </div>
   <label for="state" class="col-sm-1 control-label">State</label>
-  <div class="col-sm-2">
-    <input type="text" ng-model="ctrl.beach.state" class="form-control" id="state" placeholder="State"/>
+  <div class="col-sm-2" ng-class="{ 'has-error': beachForm.state.$touched && beachForm.state.$invalid }">
+    <input type="text" ng-model="ctrl.beach.state" class="form-control" id="state" name="state" placeholder="State" ng-minlength="2" ng-maxlength="2" required>
+  </div>
+  <div class="help-block" ng-messages="beachForm.state.$error" ng-if="beachForm.state.$touched">
+    <p ng-message="minlength">Please enter the two-letter abbreviation for the state.</p>
+    <p ng-message="maxlength">Please enter the two-letter abbreviation for the state.</p>
   </div>
   <label for="zip" class="col-sm-1 control-label">Zip Code</label>
   <div class="col-sm-3">
-    <input type="text" ng-model="ctrl.beach.zip" class="form-control" id="zip" placeholder="Zip Code"/>
+    <input type="text" ng-model="ctrl.beach.zip" class="form-control" id="zip" placeholder="Zip Code">
   </div>
 </div>
+
 <div class="form-group">
     <h3>Amenities</h3>
     <label class="checkbox-inline">
@@ -60,50 +74,55 @@
       <input type="checkbox" id="dogs" ng-model="ctrl.beach.dogs_allowed"> Dogs Allowed
     </label>
 </div>
+
 <div class="form-group">
   <h3>Rates</h3>
   <label for="parking_hourly" class="col-sm-2 control-label">Parking Hourly</label>
   <div class="col-sm-2">
-    <input type="number" ng-model="ctrl.beach.parking_hourly_cost" class="form-control" id="parking_hourly"/>
+    <input type="number" ng-model="ctrl.beach.parking_hourly_cost" class="form-control" id="parking_hourly" min="0">
   </div>
   <label for="parking_daily" class="col-sm-2 control-label">Parking Daily</label>
   <div class="col-sm-2">
-    <input type="number" ng-model="ctrl.beach.parking_daily_cost" class="form-control" id="parking_daily"/>
+    <input type="number" ng-model="ctrl.beach.parking_daily_cost" class="form-control" id="parking_daily" min="0">
   </div>
 </div>
+
 <div class="form-group">
   <label for="bike_hourly" class="col-sm-2 control-label">Bike Rental Hourly</label>
   <div class="col-sm-2">
-    <input type="number" ng-model="ctrl.beach.bike_rental_hourly_cost" class="form-control" id="bike_hourly"/>
+    <input type="number" ng-model="ctrl.beach.bike_rental_hourly_cost" class="form-control" id="bike_hourly" min="0">
   </div>
   <label for="bike_daily" class="col-sm-2 control-label">Bike Rental Daily</label>
   <div class="col-sm-2">
-    <input type="number" ng-model="ctrl.beach.bike_rental_daily_cost" class="form-control" id="bike_daily"/>
+    <input type="number" ng-model="ctrl.beach.bike_rental_daily_cost" class="form-control" id="bike_daily" min="0">
   </div>
 </div>
+
 <div class="form-group">
   <label for="chair_hourly" class="col-sm-2 control-label">Chair Rental Hourly</label>
   <div class="col-sm-2">
-    <input type="number" ng-model="ctrl.beach.chair_rental_hourly_cost" class="form-control" id="chair_hourly"/>
+    <input type="number" ng-model="ctrl.beach.chair_rental_hourly_cost" class="form-control" id="chair_hourly" min="0">
   </div>
   <label for="chair_daily" class="col-sm-2 control-label">Chair Rental Daily</label>
   <div class="col-sm-2">
-    <input type="number" ng-model="ctrl.beach.chair_rental_daily_cost" class="form-control" id="chair_daily"/>
+    <input type="number" ng-model="ctrl.beach.chair_rental_daily_cost" class="form-control" id="chair_daily" min="0">
   </div>
 </div>
+
 <div class="form-group">
   <label for="umbrella_hourly" class="col-sm-2 control-label">Umbrella Rental Hourly</label>
   <div class="col-sm-2">
-    <input type="number" ng-model="ctrl.beach.umbrella_rental_hourly_cost" class="form-control" id="umbrella_hourly"/>
+    <input type="number" ng-model="ctrl.beach.umbrella_rental_hourly_cost" class="form-control" id="umbrella_hourly" min="0">
   </div>
   <label for="umbrella_daily" class="col-sm-2 control-label">Umbrella Rental Daily</label>
   <div class="col-sm-2">
-    <input type="number" ng-model="ctrl.beach.umbrella_rental_daily_cost" class="form-control" id="umbrella_daily"/>
+    <input type="number" ng-model="ctrl.beach.umbrella_rental_daily_cost" class="form-control" id="umbrella_daily" min="0">
   </div>
 </div>
+
 <div class="form-group">
   <div>
-    <input type="submit" class="btn btn-info" value="Save"/>
+    <input type="submit" class="btn btn-info" value="Save" ng-disabled="beachForm.$invalid">
   </div>
 </div>
 
