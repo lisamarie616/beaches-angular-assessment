@@ -1,10 +1,5 @@
-beachesApp.controller('BeachesController', function($http, Auth, Beach){
+beachesApp.controller('BeachesController', function($http, Beach, Message){
   var ctrl = this;
-
-  Auth.currentUser()
-    .then(function(user){
-      ctrl.user = user;
-    });
 
   ctrl.beaches = Beach.query();
 
@@ -24,15 +19,14 @@ beachesApp.controller('BeachesController', function($http, Auth, Beach){
     return $http.delete('/api/v1/beaches/' + beach.id + '/downvote')
       .then(function(response){
         beach.score += 1;
-        // insert success message here
+        Message.success("Successfully upvoted")
       }, function(response){
         return $http.post('/api/v1/beaches/' + beach.id + '/upvote')
         .then(function(response){
           beach.score +=1;
-          //insert success message here
+          Message.success("Successfully upvoted")
         }, function(response){
-          console.log("error")
-          // insert error message here
+          Message.danger("You may only submit one vote per beach.")
         });
       });
   }
@@ -41,15 +35,14 @@ beachesApp.controller('BeachesController', function($http, Auth, Beach){
     return $http.delete('/api/v1/beaches/' + beach.id + '/upvote')
       .then(function(response){
         beach.score -= 1;
-        // insert success message here
+        Message.success("Successfully downvoted")
       }, function(response){
         return $http.post('/api/v1/beaches/' + beach.id + '/downvote')
         .then(function(response){
           beach.score -=1;
-          //insert success message here
+          Message.success("Successfully downvoted")
         }, function(response){
-          console.log("error")
-          // insert error message here
+          Message.danger("You may only submit one vote per beach.")
         });
       });
   }

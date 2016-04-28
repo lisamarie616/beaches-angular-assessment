@@ -20,6 +20,8 @@ module Api
           respond_to do |format|
             format.json { render :json => comment}
           end
+        else
+          render :json => { :errors => comment.errors.full_messages }, :status => 422
         end
       end
 
@@ -27,6 +29,8 @@ module Api
         comment = set_comment
         if comment.update(comment_params)
           respond_with comment
+        else
+          render :json => { :errors => comment.errors.full_messages }, :status => 422
         end
       end
 

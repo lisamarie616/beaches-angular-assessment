@@ -11,7 +11,7 @@ module Api
             format.json { render :json => beach}
           end
         else
-          respond_with beach.errors
+          render :json => { :errors => beach.errors.full_messages }, :status => 422
         end
       end
 

@@ -17,6 +17,8 @@ module Api
           respond_to do |format|
             format.json { render :json => beach}
           end
+        else
+          render :json => { :errors => beach.errors.full_messages }, :status => 422
         end
       end
 
@@ -26,6 +28,8 @@ module Api
           respond_to do |format|
             format.json { render :json => beach}
           end
+        else
+          render :json => { :errors => beach.errors.full_messages }, :status => 422
         end
       end
 

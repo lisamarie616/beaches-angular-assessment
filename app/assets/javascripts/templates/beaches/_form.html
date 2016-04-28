@@ -78,45 +78,73 @@
 <div class="form-group">
   <h3>Rates</h3>
   <label for="parking_hourly" class="col-sm-2 control-label">Parking Hourly</label>
-  <div class="col-sm-2">
-    <input type="number" ng-model="ctrl.beach.parking_hourly_cost" class="form-control" id="parking_hourly" min="0">
+  <div class="col-sm-2" ng-class="{ 'has-error': beachForm.parking_hourly.$touched && beachForm.parking_hourly.$invalid }">
+    <input type="number" ng-model="ctrl.beach.parking_hourly_cost" class="form-control" id="parking_hourly" name="parking_hourly" min="0">
   </div>
+  <div class="help-block" ng-messages="beachForm.parking_hourly.$error" ng-show="beachForm.parking_hourly.$touched">
+    <div ng-messages-include="messages.html"></div>
+  </div>
+
   <label for="parking_daily" class="col-sm-2 control-label">Parking Daily</label>
-  <div class="col-sm-2">
-    <input type="number" ng-model="ctrl.beach.parking_daily_cost" class="form-control" id="parking_daily" min="0">
+  <div class="col-sm-2" ng-class="{ 'has-error': beachForm.parking_daily.$touched && beachForm.parking_daily.$invalid }">
+    <input type="number" ng-model="ctrl.beach.parking_daily_cost" class="form-control" id="parking_daily" name="parking_daily" min="0">
+  </div>
+  <div class="help-block" ng-messages="beachForm.parking_daily.$error" ng-show="beachForm.parking_daily.$touched">
+    <div ng-messages-include="messages.html"></div>
   </div>
 </div>
 
 <div class="form-group">
   <label for="bike_hourly" class="col-sm-2 control-label">Bike Rental Hourly</label>
-  <div class="col-sm-2">
-    <input type="number" ng-model="ctrl.beach.bike_rental_hourly_cost" class="form-control" id="bike_hourly" min="0">
+  <div class="col-sm-2" ng-class="{ 'has-error': beachForm.bike_hourly.$touched && beachForm.bike_hourly.$invalid }">
+    <input type="number" ng-model="ctrl.beach.bike_rental_hourly_cost" class="form-control" id="bike_hourly" name="bike_hourly" min="0">
   </div>
+  <div class="help-block" ng-messages="beachForm.bike_hourly.$error" ng-show="beachForm.bike_hourly.$touched">
+    <div ng-messages-include="messages.html"></div>
+  </div>
+
   <label for="bike_daily" class="col-sm-2 control-label">Bike Rental Daily</label>
-  <div class="col-sm-2">
-    <input type="number" ng-model="ctrl.beach.bike_rental_daily_cost" class="form-control" id="bike_daily" min="0">
+  <div class="col-sm-2" ng-class="{ 'has-error': beachForm.bike_daily.$touched && beachForm.bike_daily.$invalid }">
+    <input type="number" ng-model="ctrl.beach.bike_rental_daily_cost" class="form-control" id="bike_daily" name="bike_daily" min="0">
+  </div>
+  <div class="help-block" ng-messages="beachForm.bike_daily.$error" ng-show="beachForm.bike_daily.$touched">
+    <div ng-messages-include="messages.html"></div>
   </div>
 </div>
 
 <div class="form-group">
   <label for="chair_hourly" class="col-sm-2 control-label">Chair Rental Hourly</label>
-  <div class="col-sm-2">
-    <input type="number" ng-model="ctrl.beach.chair_rental_hourly_cost" class="form-control" id="chair_hourly" min="0">
+  <div class="col-sm-2" ng-class="{ 'has-error': beachForm.chair_hourly.$touched && beachForm.chair_hourly.$invalid }">
+    <input type="number" ng-model="ctrl.beach.chair_rental_hourly_cost" class="form-control" id="chair_hourly" name="chair_hourly" min="0">
   </div>
+  <div class="help-block" ng-messages="beachForm.chair_hourly.$error" ng-show="beachForm.chair_hourly.$touched">
+    <div ng-messages-include="messages.html"></div>
+  </div>
+
   <label for="chair_daily" class="col-sm-2 control-label">Chair Rental Daily</label>
-  <div class="col-sm-2">
-    <input type="number" ng-model="ctrl.beach.chair_rental_daily_cost" class="form-control" id="chair_daily" min="0">
+  <div class="col-sm-2" ng-class="{ 'has-error': beachForm.chair_daily.$touched && beachForm.chair_daily.$invalid }">
+    <input type="number" ng-model="ctrl.beach.chair_rental_daily_cost" class="form-control" id="chair_daily" name="chair_daily" min="0">
+  </div>
+  <div class="help-block" ng-messages="beachForm.chair_daily.$error" ng-show="beachForm.chair_daily.$touched">
+    <div ng-messages-include="messages.html"></div>
   </div>
 </div>
 
 <div class="form-group">
   <label for="umbrella_hourly" class="col-sm-2 control-label">Umbrella Rental Hourly</label>
-  <div class="col-sm-2">
-    <input type="number" ng-model="ctrl.beach.umbrella_rental_hourly_cost" class="form-control" id="umbrella_hourly" min="0">
+  <div class="col-sm-2" ng-class="{ 'has-error': beachForm.umbrella_hourly.$touched && beachForm.umbrella_hourly.$invalid }">
+    <input type="number" ng-model="ctrl.beach.umbrella_rental_hourly_cost" class="form-control" id="umbrella_hourly" name="umbrella_hourly" min="0">
   </div>
+  <div class="help-block" ng-messages="beachForm.umbrella_hourly.$error" ng-show="beachForm.umbrella_hourly.$touched">
+    <div ng-messages-include="messages.html"></div>
+  </div>
+
   <label for="umbrella_daily" class="col-sm-2 control-label">Umbrella Rental Daily</label>
-  <div class="col-sm-2">
-    <input type="number" ng-model="ctrl.beach.umbrella_rental_daily_cost" class="form-control" id="umbrella_daily" min="0">
+  <div class="col-sm-2" ng-class="{ 'has-error': beachForm.umbrella_daily.$touched && beachForm.umbrella_daily.$invalid }">
+    <input type="number" ng-model="ctrl.beach.umbrella_rental_daily_cost" class="form-control" id="umbrella_daily" name="umbrella_daily" min="0">
+  </div>
+  <div class="help-block" ng-messages="beachForm.umbrella_daily.$error" ng-show="beachForm.umbrella_daily.$touched">
+    <div ng-messages-include="messages.html"></div>
   </div>
 </div>
 

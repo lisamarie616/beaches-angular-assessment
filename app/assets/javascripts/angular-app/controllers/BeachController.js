@@ -1,4 +1,4 @@
-beachesApp.controller('BeachController', function($state, $stateParams, Auth, Beach, Comment){
+beachesApp.controller('BeachController', function($state, $stateParams, Auth, Beach, Comment, Message){
   var ctrl = this;
 
   Auth.currentUser()
@@ -11,11 +11,11 @@ beachesApp.controller('BeachController', function($state, $stateParams, Auth, Be
   ctrl.deleteBeach = function(beach){
     if (beach.user_id === ctrl.user.id){
       beach.$delete(function(){
-        //success message here
+        Message.success("Succesfully deleted")
         $state.go('home.beaches');
       });  
     } else {
-      //error message here
+      Message.danger("You are not authorized to perform that action.")
       $state.go('home.beaches');  
     }
   }

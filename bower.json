@@ -9,7 +9,8 @@
       "bootstrap" : "v3.3.6",
       "angular-devise" : "latest",
       "angular-truncate-2" : "latest",
-      "angular-messages" : "latest"
+      "angular-messages" : "latest",
+      "angular-flash-alert" : "latest"
     }
   },
   "vendor": {

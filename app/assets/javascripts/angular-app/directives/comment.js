@@ -6,7 +6,7 @@ beachesApp.directive('comment', function(){
       comment: "=",
       beach: "="
     },
-    controller: function($scope, $state, $http, Auth, User){
+    controller: function($scope, $state, $http, Auth, User, Message){
       Auth.currentUser()
         .then(function(user){
           $scope.current_user = user;
@@ -21,7 +21,7 @@ beachesApp.directive('comment', function(){
               $state.go($state.current, {}, {reload: true});
             })
         } else {
-          //error message here
+          Message.danger("You are not authorized to perform that action.")
           $state.go($state.current, {}, {reload: true});
         }    
       }
@@ -30,15 +30,15 @@ beachesApp.directive('comment', function(){
         return $http.delete('/api/v1/beaches/' + beach.id + '/comments/' + comment.id + '/downvote')
           .then(function(response){
             comment.score += 1;
-            //success message here
+            Message.success("Successfully upvoted")
           }, function(response){
             return $http.post('/api/v1/beaches/' + beach.id  + '/comments/' + comment.id + '/upvote')
             .then(function(response){
               comment.score +=1;
-              //success message here
+              Message.success("Successfully upvoted")
             }, function(response){
               console.log("error")
-              //error message here
+              Message.danger("You may only submit one vote per comment.")
             });
           });
       }
@@ -47,15 +47,15 @@ beachesApp.directive('comment', function(){
           return $http.delete('/api/v1/beaches/' + beach.id + '/comments/' + comment.id + '/upvote')
             .then(function(response){
               comment.score -= 1;
-              //success message here
+              Message.success("Successfully downvoted")
             }, function(response){
               return $http.post('/api/v1/beaches/' + beach.id + '/comments/' + comment.id + '/downvote')
               .then(function(response){
                 comment.score -=1;
-                //success message here
+                Message.success("Successfully downvoted")
               }, function(response){
                 console.log("error")
-                //error message here
+                Message.danger("You may only submit one vote per comment.")
               });
             });
         }

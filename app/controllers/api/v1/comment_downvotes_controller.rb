@@ -11,7 +11,7 @@ module Api
             format.json { render :json => comment}
           end
         else
-          respond_with comment.errors
+          render :json => { :errors => comment.errors.full_messages }, :status => 422
         end
       end
 

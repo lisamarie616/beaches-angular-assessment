@@ -1,4 +1,4 @@
-beachesApp.controller('NewBeachController', function($stateParams, $state, Beach, Auth){
+beachesApp.controller('NewBeachController', function($stateParams, $state, Auth, Beach, Message){
   var ctrl = this;
 
   Auth.currentUser()
@@ -10,8 +10,12 @@ beachesApp.controller('NewBeachController', function($stateParams, $state, Beach
 
   ctrl.addBeach = function(user){
     ctrl.beach.user_id = user.id;
+
     ctrl.beach.$save(function(){
       $state.go('home.beaches');
+      Message.success("Successfully created");
+    }, function(err){
+      Message.danger(err.data.errors)
     });
   };    
 })

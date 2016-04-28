@@ -1,21 +1,20 @@
-beachesApp.controller('AuthController', function($scope, $state, Auth){
+beachesApp.controller('AuthController', function($scope, $state, Auth, Message){
   $scope.login = function() {
     Auth.login($scope.user).then(function(){
-      //success message here
+      Message.success("Signed in successfully.")
       $state.go('home.beaches')
     }, function(response) {
-      var error = response.data.error;
-      //error message here
+      Message.danger(response.data.error);
     });
   };
 
   $scope.register = function() {
     Auth.register($scope.user).then(function(){
-      //success message here
-      $state.go('home')
+      Message.success("Welcome! You have signed up successfully.");
+      $state.go('home.beaches')
     }, function(response) {
-      var errors = errorMessage(response.data)
-      //error message here
+      var errors = Message.processErrors(response.data.errors)
+      Message.danger(errors)
     });
   };
 })

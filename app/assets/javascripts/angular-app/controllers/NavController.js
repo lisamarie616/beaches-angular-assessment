@@ -1,4 +1,4 @@
-beachesApp.controller('NavController', function($scope, $state, Auth){
+beachesApp.controller('NavController', function($scope, $state, Auth, Message){
   $scope.signedIn = Auth.isAuthenticated;
 
   $scope.logout = function(){
@@ -19,7 +19,7 @@ beachesApp.controller('NavController', function($scope, $state, Auth){
 
   $scope.$on('devise:logout', function (e, user){
     $scope.user = {}
-    //success message here
+    Message.success("Signed out successfully.")
     $state.go('home')
   });  
 })
