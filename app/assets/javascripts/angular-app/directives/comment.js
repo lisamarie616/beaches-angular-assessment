@@ -27,7 +27,8 @@ beachesApp.directive('comment', function(){
       }
 
       $scope.upvote = function(beach, comment){
-        return $http.delete('/api/v1/beaches/' + beach.id + '/comments/' + comment.id + '/downvote')
+        if (Auth.isAuthenticated()){
+          return $http.delete('/api/v1/beaches/' + beach.id + '/comments/' + comment.id + '/downvote')
           .then(function(response){
             comment.score += 1;
             Message.success("Successfully upvoted")
@@ -40,11 +41,15 @@ beachesApp.directive('comment', function(){
               console.log("error")
               Message.danger("You may only submit one vote per comment.")
             });
-          });
+          });  
+        } else {
+          Message.danger("You must login or signup first.")
+        }
       }
 
         $scope.downvote = function(beach, comment){
-          return $http.delete('/api/v1/beaches/' + beach.id + '/comments/' + comment.id + '/upvote')
+          if (Auth.isAuthenticated()){
+            return $http.delete('/api/v1/beaches/' + beach.id + '/comments/' + comment.id + '/upvote')
             .then(function(response){
               comment.score -= 1;
               Message.success("Successfully downvoted")
@@ -57,7 +62,10 @@ beachesApp.directive('comment', function(){
                 console.log("error")
                 Message.danger("You may only submit one vote per comment.")
               });
-            });
+            });  
+          } else {
+            Message.danger("You must login or signup first.")
+          }
         }
 
     }

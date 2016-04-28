@@ -3,19 +3,19 @@ beachesApp.factory('Message', function (Flash) {
     var methods = {};
 
     methods.success = function(message){
-      Flash.create('success', message, 4000)
+      Flash.create('success', message, 3000)
     }
 
     methods.info = function(message){
-      Flash.create('info', message, 4000)
+      Flash.create('info', message, 3000)
     }
 
     methods.warning = function(message){
-      Flash.create('warning', message, 4000)
+      Flash.create('warning', message, 3000)
     }
 
     methods.danger = function(message){
-      Flash.create('danger', message, 4000)
+      Flash.create('danger', message, 3000)
     }
 
     methods.processErrors = function(errorObj){

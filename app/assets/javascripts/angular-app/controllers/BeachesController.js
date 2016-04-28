@@ -1,4 +1,4 @@
-beachesApp.controller('BeachesController', function($http, Beach, Message){
+beachesApp.controller('BeachesController', function($http, Auth, Beach, Message){
   var ctrl = this;
 
   ctrl.beaches = Beach.query();
@@ -16,7 +16,8 @@ beachesApp.controller('BeachesController', function($http, Beach, Message){
   }
 
   ctrl.upvote = function(beach){
-    return $http.delete('/api/v1/beaches/' + beach.id + '/downvote')
+    if (Auth.isAuthenticated()){
+      return $http.delete('/api/v1/beaches/' + beach.id + '/downvote')
       .then(function(response){
         beach.score += 1;
         Message.success("Successfully upvoted")
@@ -28,11 +29,15 @@ beachesApp.controller('BeachesController', function($http, Beach, Message){
         }, function(response){
           Message.danger("You may only submit one vote per beach.")
         });
-      });
+      });  
+    } else {
+      Message.danger("You must login or signup first.")
+    }
   }
 
   ctrl.downvote = function(beach){
-    return $http.delete('/api/v1/beaches/' + beach.id + '/upvote')
+    if (Auth.isAuthenticated()){
+      return $http.delete('/api/v1/beaches/' + beach.id + '/upvote')
       .then(function(response){
         beach.score -= 1;
         Message.success("Successfully downvoted")
@@ -44,7 +49,10 @@ beachesApp.controller('BeachesController', function($http, Beach, Message){
         }, function(response){
           Message.danger("You may only submit one vote per beach.")
         });
-      });
+      });  
+    } else {
+      Message.danger("You must login or signup first.")
+    }
   }
 
 })

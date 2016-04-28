@@ -23,11 +23,15 @@ beachesApp.controller('BeachController', function($state, $stateParams, Auth, Be
   ctrl.comment = new Comment();
 
   ctrl.addComment = function(user, beach){
-    ctrl.comment.user_id = user.id;
-    ctrl.comment.beach_id = beach.id;
-    ctrl.comment.$save(function(){
-      $state.go($state.current, {}, {reload: true});
-    });
+    if (Auth.isAuthenticated()){
+      ctrl.comment.user_id = user.id;
+      ctrl.comment.beach_id = beach.id;
+      ctrl.comment.$save(function(){
+        $state.go($state.current, {}, {reload: true});
+      });  
+    } else {
+      Message.danger("You must login or signup first.")
+    }
   }
 
 })

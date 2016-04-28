@@ -73,8 +73,9 @@ x add basic validations on front-end for beaches and comments
 * add validations to require certain fields when creating a beach (name, city, state)
 * add activerecord model validations
 * add flash messages throughout
+* restrict actions for unauthenticated users
 
-* only allow authenticated users to access app
+* restrict routes for unauthenticated users
 * add something to home page
 * update controllers and config/routes.rb to only include needed routes
 * update styles to use a bootsnipp

@@ -9,13 +9,17 @@ beachesApp.controller('NewBeachController', function($stateParams, $state, Auth,
   ctrl.beach = new Beach();
 
   ctrl.addBeach = function(user){
-    ctrl.beach.user_id = user.id;
+    if (Auth.isAuthenticated()){
+      ctrl.beach.user_id = user.id;
 
-    ctrl.beach.$save(function(){
-      $state.go('home.beaches');
-      Message.success("Successfully created");
-    }, function(err){
-      Message.danger(err.data.errors)
-    });
+      ctrl.beach.$save(function(){
+        $state.go('home.beaches');
+        Message.success("Successfully created");
+      }, function(err){
+        Message.danger(err.data.errors)
+      });
+    } else {
+      Message.danger("You must login or signup first.")
+    }
   };    
 })
