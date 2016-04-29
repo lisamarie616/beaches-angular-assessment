@@ -82,6 +82,7 @@ x add basic validations on front-end for beaches and comments
 
 * refactor Auth currentUser method (as a service?)
 * factor out upvote/downvote functions from BeachesController into a service? and from comments directive controller
+
 * add field on beach index page to add comment (at top of comments)
 * add functionality to edit comments and only allow user who posted the comment to edit it
 * add edit and delete buttons to beach index page?
