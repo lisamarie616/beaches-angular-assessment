@@ -3,7 +3,7 @@ module Api
     class BeachDownvotesController < ApplicationController
 
       def create
-        beach = Beach.find(params[:id])
+        beach = set_beach
         beach.beach_downvotes.build(user: current_user)
         if beach.save
           beach.decrement!(:score)
@@ -16,14 +16,13 @@ module Api
       end
 
       def destroy
-        beach = Beach.find(params[:id])
+        beach = set_beach
         vote = BeachDownvote.find_by(beach: beach, user: current_user)
         if vote
           beach.increment!(:score)
         end
         respond_with vote.destroy
       end
-
 
     end
   end

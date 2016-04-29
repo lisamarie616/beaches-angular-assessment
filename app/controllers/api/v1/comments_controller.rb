@@ -3,7 +3,7 @@ module Api
     class CommentsController < ApplicationController
 
       def index
-        beach = Beach.find(params[:beach_id])
+        beach = set_beach
         comments = beach.comments
         respond_with comments
       end
@@ -14,7 +14,7 @@ module Api
       end
 
       def create
-        beach = Beach.find(params[:beach_id])
+        beach = set_beach
         comment = beach.comments.build(comment_params)
         if comment.save
           respond_to do |format|
@@ -40,13 +40,10 @@ module Api
       end
 
       private
-      def comment_params
-        params.require(:comment).permit(:note, :score, :user_id, :beach_id)
-      end
-
-      def set_comment
-        Comment.find(params[:id])
-      end
+        def comment_params
+          params.require(:comment).permit(:note, :score, :user_id, :beach_id)
+        end
+        
     end
   end
 end

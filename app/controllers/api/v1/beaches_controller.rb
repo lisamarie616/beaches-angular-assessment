@@ -3,7 +3,7 @@ module Api
     class BeachesController < ApplicationController
 
       def index
-        respond_with(Beach.all.order("id DESC"))
+        respond_with(Beach.ordered)
       end
 
       def show
@@ -38,18 +38,15 @@ module Api
       end
 
       private
-      def beach_params
-        params.require(:beach).permit(:name, :description, :address, :city, :state, :zip, 
-        :parking_hourly_cost, :parking_daily_cost, :bike_rental_hourly_cost, 
-        :bike_rental_daily_cost, :chair_rental_hourly_cost, :chair_rental_daily_cost, 
-        :umbrella_rental_hourly_cost, :umbrella_rental_daily_cost, :restrooms, 
-        :dogs_allowed, :firepits, :food_onsite, :bar_onsite, :shopping_onsite, 
-        :pier, :showers, :water_fountains, :score, :user_id)
-      end
+        def beach_params
+          params.require(:beach).permit(:name, :description, :address, :city, :state, :zip, 
+          :parking_hourly_cost, :parking_daily_cost, :bike_rental_hourly_cost, 
+          :bike_rental_daily_cost, :chair_rental_hourly_cost, :chair_rental_daily_cost, 
+          :umbrella_rental_hourly_cost, :umbrella_rental_daily_cost, :restrooms, 
+          :dogs_allowed, :firepits, :food_onsite, :bar_onsite, :shopping_onsite, 
+          :pier, :showers, :water_fountains, :score, :user_id)
+        end
 
-      def set_beach
-        Beach.find(params[:id])
-      end
     end
   end
 end

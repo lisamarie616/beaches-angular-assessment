@@ -17,4 +17,8 @@ class Beach < ActiveRecord::Base
   def as_json(options = {})
     super(options.merge(include: [:comments]))
   end
+
+  def self.ordered
+    self.all.order("id DESC")
+  end
 end

@@ -3,7 +3,7 @@ module Api
     class CommentUpvotesController < ApplicationController
 
       def create
-        comment = Comment.find(params[:id])
+        comment = set_comment
         comment.comment_upvotes.build(user: current_user)
         if comment.save
           comment.increment!(:score)
@@ -16,14 +16,13 @@ module Api
       end
 
       def destroy
-        comment = Comment.find(params[:id])
+        comment = set_comment
         vote = CommentUpvote.find_by(comment: comment, user: current_user)
         if vote
           comment.decrement!(:score)
         end
         respond_with vote.destroy
       end
-
 
     end
   end
