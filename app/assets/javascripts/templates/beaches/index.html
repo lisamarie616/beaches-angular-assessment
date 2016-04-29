@@ -48,33 +48,38 @@
   </div>
 </div>
 
-<div ng-repeat="beach in ctrl.beaches | orderBy: '-score' | filter:search | amenitiesFilter:ctrl.checkboxModel" >
-  <div class="col-sm-4">
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        <h4>
-          <a ui-sref="home.beach({id: beach.id})">{{ beach.name }}</a>
-          <span class="beach-votes">
-            <button ng-click="ctrl.upvote(beach)" class="btn btn-primary btn-xs">+</button>
-            <span>{{ beach.score }}</span>
-            <button ng-click="ctrl.downvote(beach)" class="btn btn-primary btn-xs">&ndash;</button>
-          </span>
-        </h4>
-      </div>
-      <div class="panel-body fixed-panel">
-        <p><strong>Address:</strong> {{ beach.address }}<span ng-show="beach.address">,</span> {{ beach.city }}<span ng-show="beach.city">,</span> {{ beach.state }} {{ beach.zip }}</p>
-        <p><em>{{ beach.description | characters:275 :true }}</em></p>
-        <a ng-click="isCollapsed = !isCollapsed">{{ beach.score }} points | {{ beach.comments.length }} comments</a>
-        <br><br>
+<div class="row">
+  <div class="well blue-well">
+    <div ng-repeat="beach in ctrl.beaches | orderBy: '-score' | filter:search | amenitiesFilter:ctrl.checkboxModel" >
 
-        <div uib-collapse="!isCollapsed">
-          <p ng-repeat="comment in beach.comments | orderBy: '-score' | limitTo:10">
-            <comment comment="comment" beach="beach"></comment>
-          </p>
-          <a ui-sref="home.beach({id: beach.id})" class="btn btn-info btn-sm">More</a>
+      <div class="list-group">
+        <div class="list-group-item">
+
+          <div class="col-md-8">
+            <h4 class="list-group-item-heading">
+              <a ui-sref="home.beach({id: beach.id})">{{ beach.name }}</a>
+            </h4>
+            <p>{{ beach.address }}<span ng-show="beach.address">,</span> {{ beach.city }}<span ng-show="beach.city">,</span> {{ beach.state }} {{ beach.zip }}</p>
+            <p class="list-group-item-text">{{ beach.description | characters:525:true }}</p>
+            <a ng-click="isCollapsed = !isCollapsed" class="list-group-item-text">{{ beach.comments.length }} comments</a>
+          </div>
+
+          <div class="col-md-4 text-center">
+            <h2> {{ beach.score }} <small> votes </small></h2>
+            <button ng-click="ctrl.upvote(beach)" class="btn btn-primary">+</button>
+            <button ng-click="ctrl.downvote(beach)" class="btn btn-primary">&ndash;</button>
+          </div>
+
+          <div uib-collapse="!isCollapsed">
+            <div ng-repeat="comment in beach.comments | orderBy: '-score' | limitTo:5">
+              <indexcomment comment="comment" beach="beach"></indexcomment>
+            </div>
+            <a ui-sref="home.beach({id: beach.id})" class="btn btn-info btn-xs">More</a>
+          </div>
+
         </div>
-
       </div>
+    
     </div>
   </div>
 </div>

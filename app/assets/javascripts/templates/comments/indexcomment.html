@@ -1,0 +1,31 @@
+<div class="post-comments">
+  <div class="row">
+    <div class="media col-md-12">
+
+      <div class="media-heading">
+        <span class="label label-info">{{ comment.score }}</span> {{ commentor.username }}
+      </div>
+
+      <div>
+        <div class="media-left">
+          <div class="vote-wrap">
+            <div ng-click="upvote(beach, comment)" class="vote up">
+              <i class="glyphicon glyphicon-menu-up"></i>
+            </div>
+            <div ng-click="downvote(beach, comment)" class="vote inactive">
+              <i class="glyphicon glyphicon-menu-down"></i>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="media-body">
+          <p>{{ comment.note }}</p>
+          <div class="comment-meta">
+            <span><a ng-click="deleteComment(comment.beach_id, comment.id, comment.user_id)" ng-show="comment.user_id === current_user.id">delete</a></span>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>
