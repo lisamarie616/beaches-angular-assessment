@@ -69,19 +69,17 @@ x order beaches and comments by votes
 x add basic filters
 x add filters for amenities
 x add basic validations on front-end for beaches and comments
-* add validation to limit comment note attribute to 140 characters
-* add validations to require certain fields when creating a beach (name, city, state)
-* add activerecord model validations
-* add flash messages throughout
-* restrict actions for unauthenticated users
-* restrict routes for unauthenticated users
-* clean up styles on beach index page
-* clean up styles on beach show page
+x add validation to limit comment note attribute to 140 characters
+x add validations to require certain fields when creating a beach (name, city, state)
+x add activerecord model validations
+x add flash messages throughout
+x restrict actions for unauthenticated users
+x restrict routes for unauthenticated users
+x clean up styles on beach index page
+x clean up styles on beach show page
+x add something to home page
 
-* add something to home page
 * update controllers and config/routes.rb to only include needed routes
-* update styles to use a bootsnipp
-
 * refactor Auth currentUser method (as a service?)
 * factor out upvote/downvote functions from BeachesController into a service? and from comments directive controller
 

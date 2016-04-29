@@ -33,9 +33,7 @@
 
     <div class="text-center">
       <div class="well">
-
       <h4>What do you think of this beach?</h4>
-
       <form ng-submit="ctrl.addComment(ctrl.user, ctrl.beach)" name="commentForm" novalidate>
         <div class="input-group" ng-class="{ 'has-error': commentForm.note.$touched && commentForm.note.$invalid }">
           <input type="text" ng-model="ctrl.comment.note" id="userComment" name="note" class="form-control input-sm chat-input" placeholder="Write your message here..." ng-maxlength="140">
@@ -48,7 +46,6 @@
         </div>
       </form>
       </div>
-
     </div>
 
 

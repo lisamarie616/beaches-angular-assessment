@@ -1,5 +1,12 @@
 <div ng-include="'navbar.html'"></div>
 <flash-message></flash-message>
 <div class="container">
+
+  <div class="jumbotron blue" ng-show="ctrl.home()">
+    <h1>Beaches</h1>
+    <p><em>'Smell the sea and feel the sky, let your soul and spirit fly' ~ Van Morrison</em></p>
+    <p ng-hide="signedIn()">Please <a ui-sref="home.register">register</a> or <a ui-sref="home.login">log in</a> to find some beautiful beaches</p>
+  </div>
+
   <ui-view></ui-view>
 </div>
