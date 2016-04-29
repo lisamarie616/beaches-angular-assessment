@@ -76,6 +76,7 @@ x add basic validations on front-end for beaches and comments
 * restrict actions for unauthenticated users
 * restrict routes for unauthenticated users
 * clean up styles on beach index page
+* clean up styles on beach show page
 
 * add something to home page
 * update controllers and config/routes.rb to only include needed routes

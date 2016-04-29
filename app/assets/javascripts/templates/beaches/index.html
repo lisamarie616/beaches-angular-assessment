@@ -74,7 +74,7 @@
             <div ng-repeat="comment in beach.comments | orderBy: '-score' | limitTo:5">
               <indexcomment comment="comment" beach="beach"></indexcomment>
             </div>
-            <a ui-sref="home.beach({id: beach.id})" class="btn btn-info btn-xs">More</a>
+            <a ui-sref="home.beach({id: beach.id})" class="btn btn-info btn-xs" ng-show="beach.comments.length > 0">More</a>
           </div>
 
         </div>

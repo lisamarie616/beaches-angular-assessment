@@ -1,8 +1,11 @@
 <h2 class="page-header">{{ ctrl.beach.name }} <small>{{ ctrl.beach.address}}<span ng-show="ctrl.beach.address">,</span> {{ ctrl.beach.city }}<span ng-show="ctrl.beach.city">,</span> {{ ctrl.beach.state}} {{ ctrl.beach.zip }}</small></h2>
+
 <p><em>{{ ctrl.beach.description}}</em></p>
 
 <div class="row">
+
   <div class="col-sm-4">
+    <h4>Amenities</h4>
     <p ng-show="ctrl.beach.parking_hourly_cost"><strong>Parking Hourly Rate:</strong> ${{ ctrl.beach.parking_hourly_cost }}</p>
     <p ng-show="ctrl.beach.parking_daily_cost"><strong>Parking Daily Rate:</strong> ${{ ctrl.beach.parking_daily_cost }}</p>
     <p ng-show="ctrl.beach.bike_rental_hourly_cost"><strong>Bike Rental Hourly Rate:</strong> ${{ ctrl.beach.bike_rental_hourly_cost }}</p>
@@ -26,20 +29,33 @@
 
   <div class="col-sm-8">
 
-  <form ng-submit="ctrl.addComment(ctrl.user, ctrl.beach)" name="commentForm" novalidate>
-    <div class="input-group" ng-class="{ 'has-error': commentForm.note.$touched && commentForm.note.$invalid }">
-      <input type="text" ng-model="ctrl.comment.note" name="note" placeholder="add comment" class="form-control" ng-maxlength="140">
-      <div class="help-block" ng-messages="commentForm.note.$error" ng-if="commentForm.note.$touched">
-        <p ng-message="maxlength">Comments must be 140 characters or less.</p>
-      </div>
-      <span class="input-group-btn">
-        <input type="submit" class="btn btn-info btn-sm" value="Save" ng-disabled="commentForm.$invalid">  
-      </span>
-    </div>
-  </form>
+    <h4><small class="pull-right">{{ ctrl.beach.comments.length }} comments</small> Comments </h4>
 
-    <div ng-repeat="comment in ctrl.beach.comments | orderBy: '-score'" class="shape">
+    <div class="text-center">
+      <div class="well">
+
+      <h4>What do you think of this beach?</h4>
+
+      <form ng-submit="ctrl.addComment(ctrl.user, ctrl.beach)" name="commentForm" novalidate>
+        <div class="input-group" ng-class="{ 'has-error': commentForm.note.$touched && commentForm.note.$invalid }">
+          <input type="text" ng-model="ctrl.comment.note" id="userComment" name="note" class="form-control input-sm chat-input" placeholder="Write your message here..." ng-maxlength="140">
+          <span class="input-group-btn">
+            <a class="btn btn-primary btn-sm" ng-disabled="commentForm.$invalid"><span class="glyphicon glyphicon-comment"></span> Add Comment</a>
+          </span>
+        </div>
+        <div class="help-block" ng-messages="commentForm.note.$error" ng-if="commentForm.note.$touched">
+          <p ng-message="maxlength">Comments must be 140 characters or less.</p>
+        </div>
+      </form>
+      </div>
+
+    </div>
+
+
+    <div ng-repeat="comment in ctrl.beach.comments | orderBy: '-score'">
       <comment comment="comment" beach="ctrl.beach"></comment>
     </div>
+
   </div>
+
 </div>

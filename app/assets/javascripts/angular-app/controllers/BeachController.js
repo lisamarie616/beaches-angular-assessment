@@ -27,6 +27,7 @@ beachesApp.controller('BeachController', function($state, $stateParams, Auth, Be
       ctrl.comment.user_id = user.id;
       ctrl.comment.beach_id = beach.id;
       ctrl.comment.$save(function(){
+        Message.success("Succesfully created")
         $state.go($state.current, {}, {reload: true});
       });  
     } else {

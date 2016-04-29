@@ -1,5 +1,25 @@
-<button ng-click="upvote(beach, comment)" class="btn btn-primary btn-xs">+</button>
-<span>{{ comment.score }}</span>
-<button ng-click="downvote(beach, comment)" class="btn btn-primary btn-xs">&ndash;</button>
-{{ commentor.username }}: {{ comment.note }}
-<a ng-click="deleteComment(comment.beach_id, comment.id, comment.user_id)" class="btn btn-primary btn-xs" ng-show="comment.user_id === current_user.id">Delete</a>
+<div class="comments-list">
+  <div class="media">
+
+    <p class="pull-right"><small>{{ comment.score }} votes</small></p>
+    <div class="media-left">
+      <div class="vote-wrap">
+        <div ng-click="upvote(beach, comment)" class="vote up">
+          <i class="glyphicon glyphicon-menu-up"></i>
+        </div>
+        <div ng-click="downvote(beach, comment)" class="vote inactive">
+          <i class="glyphicon glyphicon-menu-down"></i>
+        </div>
+      </div>
+    </div>
+    
+    <div class="media-body">
+      <h4 class="media-heading user_name">{{ commentor.username }}</h4>
+      {{ comment.note }}
+      <p><small><a ng-click="deleteComment(comment.beach_id, comment.id, comment.user_id)" ng-show="comment.user_id === current_user.id">Delete</a></small></p>
+    </div>
+
+  </div>
+</div>
+
+

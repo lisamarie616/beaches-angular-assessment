@@ -18,6 +18,7 @@ beachesApp.directive('indexcomment', function(){
         if ($scope.current_user.id === user_id){
           return $http.delete('/api/v1/beaches/' + beach_id + '/comments/' + comment_id)
             .success(function(data, response){
+              Message.success("Succesfully deleted")
               $state.go($state.current, {}, {reload: true});
             })
         } else {
