@@ -6,7 +6,7 @@ beachesApp.directive('indexcomment', function(){
       comment: "=",
       beach: "="
     },
-    controller: function($scope, $state, $http, Auth, User, Message){
+    controller: function($scope, $state, $http, Auth, User, Message, Vote){
       Auth.currentUser()
         .then(function(user){
           $scope.current_user = user;
@@ -27,48 +27,8 @@ beachesApp.directive('indexcomment', function(){
         }    
       }
 
-      $scope.upvote = function(beach, comment){
-        if (Auth.isAuthenticated()){
-          return $http.delete('/api/v1/beaches/' + beach.id + '/comments/' + comment.id + '/downvote')
-          .then(function(response){
-            comment.score += 1;
-            Message.success("Successfully upvoted")
-          }, function(response){
-            return $http.post('/api/v1/beaches/' + beach.id  + '/comments/' + comment.id + '/upvote')
-            .then(function(response){
-              comment.score +=1;
-              Message.success("Successfully upvoted")
-            }, function(response){
-              console.log("error")
-              Message.danger("You may only submit one vote per comment.")
-            });
-          });  
-        } else {
-          Message.danger("You must login or signup first.")
-        }
-      }
-
-        $scope.downvote = function(beach, comment){
-          if (Auth.isAuthenticated()){
-            return $http.delete('/api/v1/beaches/' + beach.id + '/comments/' + comment.id + '/upvote')
-            .then(function(response){
-              comment.score -= 1;
-              Message.success("Successfully downvoted")
-            }, function(response){
-              return $http.post('/api/v1/beaches/' + beach.id + '/comments/' + comment.id + '/downvote')
-              .then(function(response){
-                comment.score -=1;
-                Message.success("Successfully downvoted")
-              }, function(response){
-                console.log("error")
-                Message.danger("You may only submit one vote per comment.")
-              });
-            });  
-          } else {
-            Message.danger("You must login or signup first.")
-          }
-        }
-
+      $scope.upvoteComment = Vote.upvoteComment;
+      $scope.downvoteComment = Vote.downvoteComment;
     }
   }
 });

@@ -78,13 +78,12 @@ x restrict routes for unauthenticated users
 x clean up styles on beach index page
 x clean up styles on beach show page
 x add something to home page
-
-* update controllers and config/routes.rb to only include needed routes
-* refactor Auth currentUser method (as a service?)
-* factor out upvote/downvote functions from BeachesController into a service? and from comments directive controller
+x factor out upvote/downvote functions from BeachesController into a service and from comments directive controller
+x refactor angular controllers
 
 * add field on beach index page to add comment (at top of comments)
 * add functionality to edit comments and only allow user who posted the comment to edit it
 * add edit and delete buttons to beach index page?
 * add background image
 * add omniauth?
+* refactor Auth currentUser method (as a service?)

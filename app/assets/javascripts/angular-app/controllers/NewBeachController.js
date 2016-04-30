@@ -11,7 +11,6 @@ beachesApp.controller('NewBeachController', function($stateParams, $state, Auth,
   ctrl.addBeach = function(user){
     if (Auth.isAuthenticated()){
       ctrl.beach.user_id = user.id;
-
       ctrl.beach.$save(function(){
         $state.go('home.beaches');
         Message.success("Successfully created");

@@ -5,5 +5,4 @@ beachesApp.controller('HomeController', function($state, Auth){
   this.home = function(){
     return $state.current.name === 'home';
   }
-
 })

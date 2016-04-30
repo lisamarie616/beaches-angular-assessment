@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
   private
     def set_beach
-      Beach.find(params[:id])
+      Beach.find(params[:beach_id] || params[:id])
     end
 
     def set_comment

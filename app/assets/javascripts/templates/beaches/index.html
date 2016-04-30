@@ -6,11 +6,11 @@
     </div>
 
     <div class="col-sm-4">
-      <input type="text" ng-model="search.city" class="form-control" id="name" placeholder="By City">
+      <input type="text" ng-model="search.city" class="form-control" id="city" placeholder="By City">
     </div>
 
     <div class="col-sm-2">
-      <input type="text" ng-model="search.state" class="form-control" id="name" placeholder="By State">
+      <input type="text" ng-model="search.state" class="form-control" id="state" placeholder="By State">
     </div>
   <button ng-click="searchCollapse = !searchCollapse" class="btn btn-primary">More</button>
   </div>
@@ -66,8 +66,8 @@
 
           <div class="col-md-4 text-center">
             <h2> {{ beach.score }} <small> votes </small></h2>
-            <button ng-click="ctrl.upvote(beach)" class="btn btn-primary">+</button>
-            <button ng-click="ctrl.downvote(beach)" class="btn btn-primary">&ndash;</button>
+            <button ng-click="ctrl.upvoteBeach(beach)" class="btn btn-primary">+</button>
+            <button ng-click="ctrl.downvoteBeach(beach)" class="btn btn-primary">&ndash;</button>
           </div>
 
           <div uib-collapse="!isCollapsed">
