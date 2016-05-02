@@ -38,7 +38,7 @@
         <div class="input-group" ng-class="{ 'has-error': commentForm.note.$touched && commentForm.note.$invalid }">
           <input type="text" ng-model="ctrl.comment.note" id="userComment" name="note" class="form-control input-sm chat-input" placeholder="Write your message here..." ng-maxlength="140">
           <span class="input-group-btn">
-            <a class="btn btn-primary btn-sm" ng-disabled="commentForm.$invalid"><span class="glyphicon glyphicon-comment"></span> Add Comment</a>
+            <button type="submit" class="btn btn-primary btn-sm" ng-disabled="commentForm.$invalid"><span class="glyphicon glyphicon-comment"></span><span class="submit-text">  Add Comment</span></button>
           </span>
         </div>
         <div class="help-block" ng-messages="commentForm.note.$error" ng-if="commentForm.note.$touched">
