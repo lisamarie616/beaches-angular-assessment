@@ -81,6 +81,7 @@ x add something to home page
 x factor out upvote/downvote functions from BeachesController into a service and from comments directive controller
 x refactor angular controllers
 x add functionality to allow users to upload multiple photos to beaches
+x add page for user to view uploaded images and delete them
 
 * add field on beach index page to add comment (at top of comments)
 * add functionality to edit comments and only allow user who posted the comment to edit it

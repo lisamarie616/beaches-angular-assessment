@@ -44,7 +44,8 @@ beachesApp.controller('BeachController', function($state, $stateParams, $timeout
         method: 'POST',
         headers: { 'Content-Type': false },
         fields: {
-          'image[image]': file
+          'image[image]': file,
+          'image[user_id]': ctrl.user.id
         },
         file: file,
         sendFieldsAs: 'json'
@@ -55,11 +56,6 @@ beachesApp.controller('BeachController', function($state, $stateParams, $timeout
       });
     }
   }
-
-  
-  
-
-
 
 })
 

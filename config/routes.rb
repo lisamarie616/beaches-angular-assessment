@@ -9,7 +9,13 @@ Rails.application.routes.draw do
         resources :comments, :except => [:new, :edit]
         resources :images, :only => [:index, :create]
       end
-      resources :users, :only => [:show]
+      resources :users, :only => [:show] do
+        member do
+          get 'images'
+        end
+      end
+
+      delete 'users/:user_id/images/:id' => 'users#destroy_images'
 
       post 'beaches/:id/upvote' => 'beach_upvotes#create', as: :beach_upvotes
       delete 'beaches/:id/upvote' => 'beach_upvotes#destroy', as: :beach_upvote

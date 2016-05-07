@@ -86,3 +86,8 @@ div.list-group-item.active small {
 .page-header.beach {
   margin: 40px 0 10px;
 }
+
+.image-delete-button {
+  margin-left: 190px;
+  margin-top: 3px;
+}

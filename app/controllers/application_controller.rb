@@ -29,4 +29,8 @@ class ApplicationController < ActionController::Base
     def set_comment
       Comment.find(params[:id])
     end
+
+    def set_user
+      User.find(params[:user_id] || params[:id])
+    end
 end

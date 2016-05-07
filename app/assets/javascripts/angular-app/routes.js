@@ -68,7 +68,18 @@ beachesApp.config(function($stateProvider, $urlRouterProvider){
           $state.go('home');
         }
       }
+    })
+    .state('home.images', {
+      url: 'images',
+      templateUrl: 'images/index.html',
+      controller: 'ImagesController as ctrl',
+      onEnter: function($state, Auth) {
+        if (!Auth._currentUser) {
+          $state.go('home');
+        }
+      }
     });
+
 
   $urlRouterProvider.otherwise('/');
 });
