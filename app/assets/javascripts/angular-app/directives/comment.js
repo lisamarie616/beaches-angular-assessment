@@ -6,13 +6,11 @@ beachesApp.directive('comment', function(){
       comment: "=",
       beach: "="
     },
-    controller: function($scope, $state, $http, Auth, User, Message, Vote){
+    controller: function($scope, $state, $http, Auth, Message, Vote){
       Auth.currentUser()
         .then(function(user){
           $scope.current_user = user;
         });
-
-      $scope.commentor = User.get({ id: $scope.comment.user_id })
 
       $scope.deleteComment = function(beach_id, comment_id, user_id){
         if ($scope.current_user.id === user_id){

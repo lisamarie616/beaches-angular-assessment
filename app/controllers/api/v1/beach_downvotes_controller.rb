@@ -7,9 +7,7 @@ module Api
         beach.beach_downvotes.build(user: current_user)
         if beach.save
           beach.decrement!(:score)
-          respond_to do |format|
-            format.json { render :json => beach}
-          end
+          render json: beach
         else
           render :json => { :errors => beach.errors.full_messages }, :status => 422
         end

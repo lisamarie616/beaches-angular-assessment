@@ -4,13 +4,13 @@ module Api
 
       def show
         user = set_user
-        respond_with(user)
+        render json: user
       end
 
       def images
         user = set_user
         images = user.images
-        respond_with images
+        render json: images
       end
 
       def destroy_images

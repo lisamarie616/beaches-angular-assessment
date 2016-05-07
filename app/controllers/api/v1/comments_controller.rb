@@ -5,21 +5,19 @@ module Api
       def index
         beach = set_beach
         comments = beach.comments
-        respond_with comments
+        render json: comments
       end
 
       def show
         comment = set_comment
-        respond_with comment
+        render json: comment
       end
 
       def create
         beach = set_beach
         comment = beach.comments.build(comment_params)
         if comment.save
-          respond_to do |format|
-            format.json { render :json => comment}
-          end
+          render json: comment
         else
           render :json => { :errors => comment.errors.full_messages }, :status => 422
         end
@@ -28,7 +26,7 @@ module Api
       def update
         comment = set_comment
         if comment.update(comment_params)
-          respond_with comment
+          render json: comment
         else
           render :json => { :errors => comment.errors.full_messages }, :status => 422
         end

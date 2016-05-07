@@ -14,7 +14,7 @@
     </div>
     
     <div class="media-body">
-      <h4 class="media-heading user_name">{{ commentor.username }}</h4>
+      <h4 class="media-heading user_name">{{ comment.user.username }}</h4>
       {{ comment.note }}
       <p><small><a ng-click="deleteComment(comment.beach_id, comment.id, comment.user_id)" ng-show="comment.user_id === current_user.id">Delete</a></small></p>
     </div>

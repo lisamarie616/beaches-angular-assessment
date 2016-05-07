@@ -3,20 +3,18 @@ module Api
     class BeachesController < ApplicationController
 
       def index
-        respond_with(Beach.ordered)
+        render json: Beach.ordered
       end
 
       def show
         beach = set_beach
-        respond_with(beach)
+        render json: beach
       end
 
       def create
         beach = Beach.new(beach_params)
         if beach.save
-          respond_to do |format|
-            format.json { render :json => beach}
-          end
+          render json: beach
         else
           render :json => { :errors => beach.errors.full_messages }, :status => 422
         end
@@ -25,9 +23,7 @@ module Api
       def update
         beach = set_beach
         if beach.update(beach_params)
-          respond_to do |format|
-            format.json { render :json => beach}
-          end
+          render json: beach
         else
           render :json => { :errors => beach.errors.full_messages }, :status => 422
         end

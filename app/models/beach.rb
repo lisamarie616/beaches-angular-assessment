@@ -15,10 +15,6 @@ class Beach < ActiveRecord::Base
             :bike_rental_daily_cost, :chair_rental_hourly_cost, :chair_rental_daily_cost, 
             :umbrella_rental_hourly_cost, :umbrella_rental_daily_cost, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 
-  def as_json(options = {})
-    super(options.merge(include: [:comments]))
-  end
-
   def self.ordered
     self.all.order("id DESC")
   end

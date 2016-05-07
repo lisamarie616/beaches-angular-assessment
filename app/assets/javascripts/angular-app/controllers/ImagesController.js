@@ -1,4 +1,4 @@
-beachesApp.controller('ImagesController', function($state, $http, Auth, UserImage,Message){
+beachesApp.controller('ImagesController', function($state, $http, Auth, UserImage, Message){
   var ctrl = this;
 
   Auth.currentUser()

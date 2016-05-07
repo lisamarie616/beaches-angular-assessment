@@ -7,9 +7,7 @@ module Api
         comment.comment_upvotes.build(user: current_user)
         if comment.save
           comment.increment!(:score)
-          respond_to do |format|
-            format.json { render :json => comment}
-          end
+          render json: comment
         else
           render :json => { :errors => comment.errors.full_messages }, :status => 422
         end
