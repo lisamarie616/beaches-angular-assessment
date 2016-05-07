@@ -78,3 +78,11 @@ div.list-group-item.active small {
   background-color: #91D1F4;
   color: #fff;
 }
+
+.beach-details {
+  margin-top: 20px;
+}
+
+.page-header.beach {
+  margin: 40px 0 10px;
+}

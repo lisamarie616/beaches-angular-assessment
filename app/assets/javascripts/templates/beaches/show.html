@@ -1,8 +1,10 @@
-<h2 class="page-header">{{ ctrl.beach.name }} <small>{{ ctrl.beach.address}}<span ng-show="ctrl.beach.address">,</span> {{ ctrl.beach.city }}<span ng-show="ctrl.beach.city">,</span> {{ ctrl.beach.state}} {{ ctrl.beach.zip }}</small></h2>
-
+<h2 class="page-header beach">{{ ctrl.beach.name }} <small>{{ ctrl.beach.address}}<span ng-show="ctrl.beach.address">,</span> {{ ctrl.beach.city }}<span ng-show="ctrl.beach.city">,</span> {{ ctrl.beach.state}} {{ ctrl.beach.zip }}</small></h2>
 <p><em>{{ ctrl.beach.description}}</em></p>
 
-<div class="row">
+<ng-gallery images="ctrl.images" thumbs-num="10"></ng-gallery>
+<button ngf-select="ctrl.upload($files)" multiple accept="image/*" class="btn btn-sm btn-info">Add Photos</button>
+
+<div class="row beach-details">
 
   <div class="col-sm-4">
     <h4>Amenities</h4>

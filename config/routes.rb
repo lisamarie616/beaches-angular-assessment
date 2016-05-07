@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :beaches, :except => [:new, :edit] do
         resources :comments, :except => [:new, :edit]
+        resources :images, :only => [:index, :create]
       end
       resources :users, :only => [:show]
 

@@ -10,7 +10,10 @@
       "angular-devise" : "latest",
       "angular-truncate-2" : "latest",
       "angular-messages" : "latest",
-      "angular-flash-alert" : "latest"
+      "angular-flash-alert" : "latest",
+      "ng-file-upload-shim": "latest",
+      "ng-file-upload": "latest",
+      "ngGallery": "latest"
     }
   },
   "vendor": {

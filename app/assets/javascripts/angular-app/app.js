@@ -1,1 +1,1 @@
-var beachesApp = angular.module('app', ['ui.router', 'ngResource', 'templates', 'Devise', 'ui.bootstrap', 'ngMessages', 'ngFlash', 'truncate', 'App.filters'])
+var beachesApp = angular.module('app', ['ui.router', 'ngResource', 'templates', 'Devise', 'ui.bootstrap', 'ngMessages', 'ngFlash', 'truncate', 'ngFileUpload', 'jkuri.gallery', 'App.filters'])

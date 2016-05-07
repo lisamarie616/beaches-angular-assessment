@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426215102) do
+ActiveRecord::Schema.define(version: 20160507012621) do
 
   create_table "beach_downvotes", force: :cascade do |t|
     t.integer  "beach_id"
@@ -78,6 +78,16 @@ ActiveRecord::Schema.define(version: 20160426215102) do
     t.integer  "beach_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "beach_id"
   end
 
   create_table "users", force: :cascade do |t|

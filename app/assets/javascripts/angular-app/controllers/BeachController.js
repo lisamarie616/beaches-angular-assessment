@@ -1,4 +1,4 @@
-beachesApp.controller('BeachController', function($state, $stateParams, Auth, Beach, Comment, Message){
+beachesApp.controller('BeachController', function($state, $stateParams, $timeout, Auth, Upload, Beach, Comment, Image, Message){
   var ctrl = this;
 
   Auth.currentUser()
@@ -7,6 +7,7 @@ beachesApp.controller('BeachController', function($state, $stateParams, Auth, Be
     });
 
   ctrl.beach = Beach.get({ id: $stateParams.id })
+  ctrl.images = Image.query({ beach_id: $stateParams.id })
 
   ctrl.deleteBeach = function(beach){
     if (beach.user_id === ctrl.user.id){
@@ -35,4 +36,30 @@ beachesApp.controller('BeachController', function($state, $stateParams, Auth, Be
     }
   }
 
+  ctrl.upload = function (files) {
+    for (var i = 0; i < files.length; i++) {
+      var file = files[i];
+      ctrl.upload = Upload.upload({
+        url: '/api/v1/beaches/' + ctrl.beach.id + '/images',
+        method: 'POST',
+        headers: { 'Content-Type': false },
+        fields: {
+          'image[image]': file
+        },
+        file: file,
+        sendFieldsAs: 'json'
+      }).then(function (resp) {
+        $state.go($state.current, {}, {reload: true});
+      }, function (resp) {
+        Message.danger("Error. Please try again.")
+      });
+    }
+  }
+
+  
+  
+
+
+
 })
+

@@ -7,4 +7,7 @@
 //= require angular-truncate-2
 //= require angular-messages
 //= require angular-flash-alert
+//= require ng-file-upload-shim
+//= require ng-file-upload
+//= require ngGallery
 //= require_tree .
