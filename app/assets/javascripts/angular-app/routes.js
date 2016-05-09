@@ -70,16 +70,15 @@ beachesApp.config(function($stateProvider, $urlRouterProvider){
       }
     })
     .state('home.images', {
-      url: 'images',
+      url: 'users/:id/images',
       templateUrl: 'images/index.html',
       controller: 'ImagesController as ctrl',
-      onEnter: function($state, Auth) {
-        if (!Auth._currentUser) {
+      onEnter: function($state, $stateParams, Auth) {
+        if (!Auth._currentUser || Auth._currentUser.id != $stateParams.id) {
           $state.go('home');
         }
       }
     });
-
 
   $urlRouterProvider.otherwise('/');
 });

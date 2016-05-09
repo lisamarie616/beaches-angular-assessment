@@ -1,16 +1,11 @@
-beachesApp.controller('ImagesController', function($state, $http, Auth, UserImage, Message){
+beachesApp.controller('ImagesController', function($state, $stateParams, $http, UserImage, Message){
   var ctrl = this;
 
-  Auth.currentUser()
-    .then(function(user){
-      ctrl.user = user;
-    });
-
-  ctrl.images = UserImage.query({ user_id: Auth._currentUser.id })
+  ctrl.images = UserImage.query({ user_id: $stateParams.id })
 
   ctrl.deleteImage = function(image){
-    if (image.user_id === ctrl.user.id.toString()){
-      return $http.delete('/api/v1/users/' + ctrl.user.id + '/images/' + image.id)
+    if (image.user_id === $stateParams.id.toString()){
+      return $http.delete('/api/v1/users/' + $stateParams.id + '/images/' + image.id)
         .success(function(data, response){
           Message.success("Succesfully deleted")
           $state.go($state.current, {}, {reload: true});
