@@ -1,4 +1,4 @@
-beachesApp.controller('BeachController', function($state, $stateParams, $timeout, Auth, Upload, Beach, Comment, Image, Message){
+beachesApp.controller('BeachController', function($state, $stateParams, $timeout, $http, Auth, Upload, Beach, Comment, Image, Message){
   var ctrl = this;
 
   Auth.currentUser()
@@ -55,6 +55,28 @@ beachesApp.controller('BeachController', function($state, $stateParams, $timeout
         Message.danger("Error. Please try again.")
       });
     }
+  }
+
+  ctrl.logVisited = function(){
+    $http.post('/api/v1/beaches/' + ctrl.beach.id + '/visits').then(function(){
+      $state.go($state.current, {}, {reload: true});
+    })
+  }
+
+  ctrl.logNotVisited = function(){
+    $http.delete('/api/v1/beaches/' + ctrl.beach.id + '/visits').then(function(){
+      $state.go($state.current, {}, {reload: true});
+    })
+  }
+
+  ctrl.checkVisited = function(visitors){
+    var check;
+    visitors.forEach(function(v){
+      if (v.id == Auth._currentUser.id){
+        check = true;
+      }
+    })
+    return check;
   }
 
 })

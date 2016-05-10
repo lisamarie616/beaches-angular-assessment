@@ -1,3 +1,4 @@
+//= require lodash/dist/lodash
 //= require angular
 //= require angular-devise
 //= require angular-rails-templates
@@ -10,4 +11,5 @@
 //= require ng-file-upload-shim
 //= require ng-file-upload
 //= require ngGallery
+//= require angular-google-maps
 //= require_tree .

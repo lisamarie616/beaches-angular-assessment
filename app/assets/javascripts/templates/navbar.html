@@ -16,6 +16,7 @@
         <li ng-hide="signedIn()" ui-sref-active="active"><a href="#/register">Register</a></li>
         <li ng-show="signedIn()" ui-sref-active="active"><a href="#/beaches">All Beaches</a></li>
         <li ng-show="signedIn()" ui-sref-active="active"><a href="#/beaches/new">Add a Beach</a></li>
+        <li ng-show="signedIn()" ui-sref-active="active"><a href="#/users/{{user.id}}/maps">Maps</a></li>
         <li ng-show="signedIn()" ui-sref-active="active"><a href="#/users/{{user.id}}/images">Uploaded Images</a></li>
         <li ng-show="signedIn()"><a href="#/">Logged in as {{ user.username }}</a></li>
         <li ng-show="signedIn()" ui-sref-active="active"><a ng-click="logout()">Log Out</a></li>

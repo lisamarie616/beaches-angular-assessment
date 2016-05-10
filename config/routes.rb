@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       resources :users, :only => [:show] do
         member do
           get 'images'
+          get 'visited'
+          get 'not_visited'
         end
       end
 
@@ -28,6 +30,9 @@ Rails.application.routes.draw do
 
       post 'beaches/:beach_id/comments/:id/downvote' => 'comment_downvotes#create', as: :comment_downvotes
       delete 'beaches/:beach_id/comments/:id/downvote' => 'comment_downvotes#destroy', as: :comment_downvote
+
+      post 'beaches/:id/visits' => 'visits#create'
+      delete 'beaches/:id/visits' => 'visits#destroy'
       
     end
   end

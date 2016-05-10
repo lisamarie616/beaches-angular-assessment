@@ -7,4 +7,5 @@ class BeachSerializer < ActiveModel::Serializer
     :pier, :showers, :water_fountains, :score, :user_id
 
     has_many :comments, serializer: SimpleCommentSerializer
+    has_many :visitors
 end

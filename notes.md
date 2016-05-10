@@ -83,13 +83,6 @@ x refactor angular controllers
 x add functionality to allow users to upload multiple photos to beaches
 x add page for user to view uploaded images and delete them
 
-* add field on beach index page to add comment (at top of comments)
-* add functionality to edit comments and only allow user who posted the comment to edit it
-* add edit and delete buttons to beach index page?
-* add background image
-* add omniauth?
-* refactor Auth currentUser method (as a service?)
-
 1. Beaches should have multiple picture uploads.
 2. A user should be able to say "They've been there."
 3. Show a user a map that plots beaches theyve been at and one that shows them the beaches they haven't been at.

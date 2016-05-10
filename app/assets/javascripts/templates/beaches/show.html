@@ -4,6 +4,10 @@
 <ng-gallery images="ctrl.images" thumbs-num="10"></ng-gallery>
 <button ngf-select="ctrl.upload($files)" multiple accept="image/*" class="btn btn-sm btn-info">Add Photos</button>
 
+<h4>Been Here?</h4>
+<button ng-click="ctrl.logVisited()" ng-class="ctrl.checkVisited(ctrl.beach.visitors) ? 'btn btn-success' : 'btn btn-primary' ">Yes</button>
+<button ng-click="ctrl.logNotVisited()" ng-class="ctrl.checkVisited(ctrl.beach.visitors) ? 'btn btn-primary' : 'btn btn-danger' ">No</button>
+
 <div class="row beach-details">
 
   <div class="col-sm-4">

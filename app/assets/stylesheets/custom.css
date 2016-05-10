@@ -90,3 +90,15 @@ div.list-group-item.active small {
 .image-delete-button {
   margin-top: 5px;
 }
+
+.angular-google-map-container { 
+  height: 500px; 
+}
+
+.not-visited {
+  background-color: red;
+}
+
+.bottom-map {
+  margin-bottom: 50px;
+}

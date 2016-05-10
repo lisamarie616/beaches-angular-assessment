@@ -13,7 +13,8 @@
       "angular-flash-alert" : "latest",
       "ng-file-upload-shim": "latest",
       "ng-file-upload": "latest",
-      "ngGallery": "latest"
+      "ngGallery": "latest",
+      "angular-google-maps": "v2.0.16"
     }
   },
   "vendor": {

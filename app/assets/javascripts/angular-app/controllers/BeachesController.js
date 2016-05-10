@@ -17,4 +17,5 @@ beachesApp.controller('BeachesController', function($http, Auth, Beach, Message,
 
   ctrl.upvoteBeach = Vote.upvoteBeach;
   ctrl.downvoteBeach = Vote.downvoteBeach;
+
 })

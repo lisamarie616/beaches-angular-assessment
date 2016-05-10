@@ -78,9 +78,18 @@ beachesApp.config(function($stateProvider, $urlRouterProvider){
           $state.go('home');
         }
       }
+    })
+    .state('home.maps', {
+      url: 'users/:id/maps',
+      templateUrl: 'maps/index.html',
+      controller: 'MapsController as ctrl',
+      onEnter: function($state, $stateParams, Auth) {
+        if (!Auth._currentUser || Auth._currentUser.id != $stateParams.id) {
+          $state.go('home');
+        }
+      }
     });
 
   $urlRouterProvider.otherwise('/');
 });
-
 

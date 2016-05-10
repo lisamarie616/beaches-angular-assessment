@@ -1,0 +1,32 @@
+<div ng-show='ctrl.stateIsLoading' class="row">
+  <h3>Loading data... Please wait.</h3>
+    <div class="progress progress-striped active page-progress-bar">
+      <div class="progress-bar" style="width: 100%;"></div>
+    </div>
+</div>
+
+<div ng-hide='ctrl.stateIsLoading'>
+  <h2 class="page-header">Beaches Visited</h2>
+</div>
+<ui-gmap-google-map center="ctrl.mapA.center" zoom="ctrl.mapA.zoom">
+  <ui-gmap-marker ng-repeat="marker in ctrl.visitedList"
+    idKey='marker.id'
+    coords='marker.coords'
+    options='marker.options'
+    >
+  </ui-gmap-marker>
+</ui-gmap-google-map>
+
+<div ng-hide='ctrl.stateIsLoading'>
+  <h2 class="page-header">Beaches To Explore</h2>
+</div>
+<div class="bottom-map">
+  <ui-gmap-google-map center="ctrl.mapB.center" zoom="ctrl.mapB.zoom">
+    <ui-gmap-marker ng-repeat="marker in ctrl.notVisitedList"
+      idKey='marker.id'
+      coords='marker.coords'
+      options="marker.options"
+      >
+    </ui-gmap-marker>
+  </ui-gmap-google-map>
+</div>

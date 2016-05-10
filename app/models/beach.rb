@@ -2,6 +2,9 @@ class Beach < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   belongs_to :user
   has_many :images
+
+  has_many :visits
+  has_many :visitors, through: :visits, source: :user
   
   has_many :beach_upvotes, dependent: :destroy
   has_many :upvoted_users, through: :beach_upvotes, source: :user
