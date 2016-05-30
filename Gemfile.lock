@@ -194,7 +194,7 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   paperclip (~> 5.0.0.beta1)
-  rails
+  rails (= 4.2.6)
   responders
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
