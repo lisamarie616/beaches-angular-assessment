@@ -1,5 +1,4 @@
 # Beaches
-***
 AngularJS app with Rails API backend.
 Search for beaches based on name, location, and amenities.
 
